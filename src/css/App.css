@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #CBC6CE; /* Postavka boje pozadine za sve stranice */
+  background-color: #cbc6ce; /* Postavka boje pozadine za sve stranice */
 }
 
 .App {
@@ -13,7 +13,8 @@ body {
 
 .hero {
   height: 100vh;
-  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+  background: url("https://via.placeholder.com/1920x1080") no-repeat center
+    center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,10 +37,9 @@ body {
 }
 
 .footer {
-  background-color: #CBC6CE; /* Boja footera */
+  background-color: #cbc6ce; /* Boja footera */
   color: black; /* Boja teksta */
   text-align: center;
-  padding: 1rem;
   width: 100%;
   position: relative; /* Ostavlja footer ispod sadržaja */
 }
@@ -47,4 +47,20 @@ body {
 .content {
   padding: 2rem;
   text-align: left;
+}
+
+.auth-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* light shadow to make the form stand out */
+  width: 400px; /* set a width for the form */
+  text-align: center; /* center text */
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh; /* Make container fill the full height of the viewport */
 }

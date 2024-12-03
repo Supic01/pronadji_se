@@ -4,7 +4,9 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(#CBC6CE); /* Tamnija pozadina koja ostaje u boji #CBC6CE */
+  background-color: rgba(
+    #cbc6ce
+  ); /* Tamnija pozadina koja ostaje u boji #CBC6CE */
   color: black; /* Tekst je crn */
   padding: 1rem 2rem;
   position: sticky;
@@ -49,7 +51,7 @@
 }
 
 .navbar ul li a::after {
-  content: '';
+  content: "";
   margin: auto;
   display: block;
   width: 0%;
@@ -62,4 +64,14 @@
 .navbar ul li a:hover::after {
   width: 100%;
   opacity: 1;
+}
+
+.logbtn {
+  border-radius: 10px;
+  border-style: double;
+  border-color: white;
+  color: white;
+  background-color: #6a0dad;
+  font-size: 15px;
+  padding: 8px;
 }

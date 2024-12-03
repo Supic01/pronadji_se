@@ -1,0 +1,16 @@
+﻿.btn {
+  width: 86%; /* Širina kao input polja */
+  padding: 10px 0; /* Vertikalno poravnanje */
+  font-size: 16px; /* Veličina fonta */
+  color: #fff; /* Ljubičasti tekst */
+  background-color: #6a0dad; /* Bela pozadina */
+  border: 2px solid #6a0dad; /* Ljubičasti obrub */
+  border-radius: 8px; /* Blagi zaobljeni uglovi */
+  cursor: pointer; /* Ikonica za pokazivač */
+  transition: all 0.3s ease; /* Glatka tranzicija */
+}
+
+.btn:hover {
+  background-color: #6a0dad; /* Ljubičasta pozadina pri hoveru */
+  color: white; /* Bela boja teksta pri hoveru */
+}
