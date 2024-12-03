@@ -1,0 +1,19 @@
+/* Footer.css */
+
+.footer {
+  background-color: #CBC6CE; /* Boja pozadine footera */
+  color: black; /* Boja teksta */
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  margin-top: auto; /* Guranje footera na dno sadržaja */
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Visina ekrana kako bi footer bio na dnu */
+}
+
+  

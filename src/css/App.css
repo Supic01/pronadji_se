@@ -1,10 +1,14 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #CBC6CE; /* Postavka boje pozadine za sve stranice */
 }
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Omogućava da sadržaj ispuni visinu ekrana */
 }
 
 .hero {
@@ -20,15 +24,6 @@ body {
   font-size: 3rem;
 }
 
-.navbar {
-  background: #333;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .navbar ul {
   list-style: none;
   display: flex;
@@ -36,18 +31,17 @@ body {
 }
 
 .navbar a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 .footer {
-  background: #333;
-  color: white;
-  padding: 1rem;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  background-color: #CBC6CE; /* Boja footera */
+  color: black; /* Boja teksta */
   text-align: center;
+  padding: 1rem;
+  width: 100%;
+  position: relative; /* Ostavlja footer ispod sadržaja */
 }
 
 .content {

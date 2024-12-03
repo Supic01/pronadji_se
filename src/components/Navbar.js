@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../css/Navbar.css'; // Uključivanje CSS-a za navbar
 
 const Navbar = () => {
   return (
