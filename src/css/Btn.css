@@ -1,16 +1,17 @@
 ﻿.btn {
-  width: 86%; /* Širina kao input polja */
+  width: 80%; /* Širina kao input polja */
   padding: 10px 0; /* Vertikalno poravnanje */
   font-size: 16px; /* Veličina fonta */
   color: #fff; /* Ljubičasti tekst */
-  background-color: #6a0dad; /* Bela pozadina */
-  border: 2px solid #6a0dad; /* Ljubičasti obrub */
+  background-color: #826afb; /* Bela pozadina */
+  border: 2px solid #826afb; /* Ljubičasti obrub */
   border-radius: 8px; /* Blagi zaobljeni uglovi */
   cursor: pointer; /* Ikonica za pokazivač */
   transition: all 0.3s ease; /* Glatka tranzicija */
+  margin-bottom: 12px;
 }
-
+ 
 .btn:hover {
-  background-color: #6a0dad; /* Ljubičasta pozadina pri hoveru */
+  background-color: #826afb; /* Ljubičasta pozadina pri hoveru */
   color: white; /* Bela boja teksta pri hoveru */
 }

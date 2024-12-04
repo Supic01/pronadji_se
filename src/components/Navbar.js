@@ -38,7 +38,7 @@ const Navbar = () => {
             </li>
           </ul>
           <button className="logbtn">
-            <Link style={{ color: "white" }} to="/signin">
+            <Link className="link-style" style={{ color: "white" }} to="/signin">
               Prijavi se
             </Link>
           </button>

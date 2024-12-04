@@ -1,13 +1,15 @@
 import React from 'react';
+import "../css/Home.css";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <div className="home">
       <div className="hero">
-        <h1>Pronadji se</h1>
+        <h1 className='white'>Pronadji se</h1>
       </div>
       <div className="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna vel massa...</p>
+        <p>Ovde nesto pise</p>
       </div>
     </div>
   );
