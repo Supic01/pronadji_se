@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import Swal from 'sweetalert2';
-=======
 import React, { useState } from "react";
 import Swal from "sweetalert2";
->>>>>>> 91becc3d2bcce49d5b9c66825a77d7ed023556e4
 import "../css/Contact.css";
 const Contact = () => {
   // Stanja za unos u formi

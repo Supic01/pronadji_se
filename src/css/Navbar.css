@@ -39,15 +39,11 @@
   font-family: "Parkinsans", sans-serif;
   font-size: 1.7rem; /* Smanjeno sa 2.2rem na 2rem */
   font-weight: bold;
-<<<<<<< HEAD
+  
   color: #6a4df8; /* Ljubičasta boja */
   letter-spacing: 1px; /* Umeren razmak između slova */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Suptilna senka */
   transition: color 0.3s ease, transform 0.3s ease; 
-=======
-  color: #826afb; /* Logo boja u #   */
-  transition: color 0.3s ease; /* Tranzicija boje loga */
->>>>>>> 91becc3d2bcce49d5b9c66825a77d7ed023556e4
   pointer-events: none;
 }
 
