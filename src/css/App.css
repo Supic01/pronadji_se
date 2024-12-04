@@ -1,52 +1,19 @@
+/* App.css: Globalni stilovi */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #cbc6ce; /* Postavka boje pozadine za sve stranice */
+  background-color: #CBC6CE; /* Pozadina za aplikaciju */
+  color: black; /* Globalna boja teksta */
 }
 
 .App {
-  text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Omogućava da sadržaj ispuni visinu ekrana */
 }
 
-.hero {
-  height: 100vh;
-  background: url("https://via.placeholder.com/1920x1080") no-repeat center
-    center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar a {
-  color: black;
-  text-decoration: none;
-}
-
-.footer {
-  background-color: #cbc6ce; /* Boja footera */
-  color: black; /* Boja teksta */
-  text-align: center;
-  width: 100%;
-  position: relative; /* Ostavlja footer ispod sadržaja */
-}
-
-.content {
-  padding: 2rem;
-  text-align: left;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .auth-form {
