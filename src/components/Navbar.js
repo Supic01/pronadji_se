@@ -24,10 +24,13 @@ const Navbar = () => {
       {isVisible && (
         <nav className="navbar">
           <div className="logo-container">
-            <div className="icon">
-              <img src={searchIcon} alt="Search Icon" className="icon" />
-            </div>
-            <div className="logo">PronađiSe</div>
+            {/* Omotano u Link komponentu kako bi klik vodio na početnu stranu */}
+            <Link to="/" className="logo-link">
+              <div className="icon">
+                <img src={searchIcon} alt="Search Icon" className="icon" />
+              </div>
+              <div className="logo">Pronadji Se</div>
+            </Link>
           </div>
           <ul>
             <li>

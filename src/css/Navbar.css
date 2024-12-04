@@ -30,17 +30,25 @@
 }
 
 .icon img {
-  width: 60px; /* Adjust width as needed */
-  height: 60px; /* Maintain aspect ratio */
+  width: 50px; /* Smanjeno sa 60px na 50px radi balansa */
+  height: 50px;
+  margin-right: 15px; /* Pomeranje ikone od teksta */
 }
 
 .navbar .logo {
   font-family: "Parkinsans", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem; /* Smanjeno sa 2.2rem na 2rem */
   font-weight: bold;
-  color: #826afb; /* Logo boja u #CBC6CE */
-  transition: color 0.3s ease; /* Tranzicija boje loga */
+  color: #6a4df8; /* Ljubičasta boja */
+  letter-spacing: 1px; /* Umeren razmak između slova */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Suptilna senka */
+  transition: color 0.3s ease, transform 0.3s ease; 
   pointer-events: none;
+}
+
+.navbar .logo:hover {
+  color: #9570e8; /* Svetlija ljubičasta pri hover-u */
+  transform: translateY(-3px); /* Dodajemo nežno pomeranje na hover */
 }
 
 .navbar ul {
@@ -56,15 +64,15 @@
 }
 
 .navbar ul li a {
-  color: black; /* Linkovi su crni */
+  color: #333; /* Tamnija nijansa crne za linkove */
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease, transform 0.3s ease; /* Tranzicija boje i transformacije */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar ul li a:hover {
-  color: #333; /* Linkovi u boji #CBC6CE pri hover-u */
-  transform: scale(1.1); /* Uvećanje teksta prilikom hover-a */
+  color: #6a4df8; /* Ljubičasta boja prilikom hover-a */
+  transform: scale(1.1); 
 }
 
 .navbar ul li a::after {
@@ -73,7 +81,7 @@
   display: block;
   width: 0%;
   height: 2px;
-  background-color: #333; /* Tamnija nijansa zelene zamenjena sa #CBC6CE */
+  background-color: #6a4df8; /* Ljubičasta boja za hover liniju */
   opacity: 0;
   transition: 0.6s;
 }

@@ -1,33 +1,54 @@
 .about-container {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .image-container {
-    display: flex;
-    justify-content: center; /* Centriranje slika */
-    gap: 20px; /* Razmak između slika */
-    margin-top: 40px; /* Razmak između teksta i slika */
-  }
-  
-  .image-item {
-    display: flex;
-    flex-direction: column; /* Vertikalno poređivanje slike i teksta */
-    align-items: center; /* Centriranje slike i teksta */
-  }
-  
-  .round-image {
-    width: 150px; /* Širina slike */
-    height: 150px; /* Visina slike */
-    border-radius: 50%; /* Pravi sliku okruglom */
-    object-fit: cover; /* Prilagodi sliku unutar kruga */
-    border: 2px solid #ccc; /* Opcionalno: okvir */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcionalno: efekat senke */
-  }
-  
-  .image-item p {
-    margin-top: 10px; /* Razmak između slike i teksta */
-    font-size: 16px; /* Veličina fonta za tekst */
-    font-weight: bold; /* Debeli tekst */
-  }
-  
+  padding: 20px;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Centriranje slika */
+  gap: 20px; /* Razmak između slika */
+  margin-top: 40px; /* Razmak između teksta i slika */
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column; /* Vertikalno poređivanje slike i teksta */
+  align-items: center; /* Centriranje slike i teksta */
+}
+
+.round-image {
+  width: 150px; /* Širina slike */
+  height: 150px; /* Visina slike */
+  border-radius: 50%; /* Pravi sliku okruglom */
+  object-fit: cover; /* Prilagodi sliku unutar kruga */
+  border: 2px solid #ccc; /* Opcionalno: okvir */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcionalno: efekat senke */
+}
+
+.image-item p {
+  margin-top: 10px; /* Razmak između slike i teksta */
+  font-size: 16px; /* Veličina fonta za tekst */
+  font-weight: bold; /* Debeli tekst */
+}
+
+/* Stil za karticu sa tekstom */
+.card {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Raspored kartica (tekst) */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
