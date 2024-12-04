@@ -3,8 +3,8 @@
   background-color: #8b868f; /* Boja pozadine footera */
   color: black; /* Boja teksta */
   text-align: center;
-  padding: 1rem 0;
   width: 100%;
   margin-top: auto; /* Guranje footera na dno sadržaja */
   position: relative;
 }
+

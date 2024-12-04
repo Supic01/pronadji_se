@@ -1,6 +1,7 @@
 import React from 'react';
 import "../css/About.css"; // Dodaj CSS za stilizaciju
 
+
 const About = () => {
   return (
     <div className="about-container">

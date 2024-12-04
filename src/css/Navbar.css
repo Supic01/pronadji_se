@@ -5,6 +5,7 @@
   align-items: center;
   background-color: transparent;
   color: black;
+
   padding: 1rem 2rem;
   position: sticky;
   position: relative;
@@ -49,7 +50,7 @@
 }
 
 .navbar ul li a::after {
-  content: '';
+  content: "";
   margin: auto;
   display: block;
   width: 0%;
@@ -63,3 +64,4 @@
   width: 100%;
   opacity: 1;
 }
+

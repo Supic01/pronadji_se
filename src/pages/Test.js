@@ -80,6 +80,7 @@ const shuffleQuestions = (categories) => {
     });
   }
   return mixedQuestions.sort(() => Math.random() - 0.5);
+
 };
 
 const Test = () => {
@@ -165,6 +166,7 @@ return(
           </li>
         ))}
       </ul>
+
     </div>
   )}
 </div>
