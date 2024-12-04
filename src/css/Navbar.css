@@ -1,16 +1,16 @@
-/* Navbar osnovni stilovi */
+/* Navbar.css: Stilovi za navigaciju */
 .navbar {
   display: flex;
-  position: relative;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(#CBC6CE); /* Tamnija pozadina koja ostaje u boji #CBC6CE */
-  color: black; /* Tekst je crn */
+  background-color: transparent;
+  color: black;
   padding: 1rem 2rem;
   position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease-in-out; /* Tranzicija pozadine */
+  transition: background-color 0.3s ease-in-out;
 }
 
 .navbar .logo {
