@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import "../css/Test.css";
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
+
+const defaultState = {
+  center: [55.751574, 37.573856],
+  zoom: 5,
+};
 
 // Pitanja sa kategorijama
 const categories = {
@@ -67,8 +73,8 @@ const categories = {
     "Privlače me problemi u vezi sa mentalnim zdravljem i emocionalnim blagostanjem.",
     "Zanima me kako društveni faktori oblikuju mišljenje i ponašanje.",
     "Uvek želim da naučim više o tome kako ljudi reaguju na stresne situacije."
-  ]  
-  
+  ]
+
 };
 
 // Funkcija za mešanje pitanja
@@ -87,11 +93,18 @@ const Test = () => {
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [responses, setResponses] = useState({});
   const [results, setResults] = useState(null); // Dodato stanje za rezultate
+  const [mapInstance, setMapInstance] = useState(null);
 
   useEffect(() => {
     // Mešanje pitanja prilikom inicijalnog učitavanja
     const mixed = shuffleQuestions(categories);
     setShuffledQuestions(mixed);
+  }, []);
+
+  useEffect(() => {
+
+    console.log(YMaps);
+    console.log('----');
   }, []);
 
   const handleResponseChange = (index, value) => {
@@ -169,10 +182,16 @@ return(
 
     </div>
   )}
+
+    <YMaps>
+      <Map defaultState={defaultState}>
+        <Placemark geometry={[55.684758, 37.738521]} />
+      </Map>
+    </YMaps>
 </div>
 
 );
-  
+
 };
 
 export default Test;
