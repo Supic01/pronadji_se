@@ -42,6 +42,9 @@ const Navbar = () => {
             <li>
               <Link to="/contact">Kontakt</Link>
             </li>
+            <li>
+              <Link to="/profile">Profil Test</Link>
+            </li>
           </ul>
           <button className="logbtn">
             <Link

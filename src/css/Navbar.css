@@ -38,7 +38,7 @@
   font-family: "Parkinsans", sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #826afb; /* Logo boja u #CBC6CE */
+  color: #826afb; /* Logo boja u #   */
   transition: color 0.3s ease; /* Tranzicija boje loga */
   pointer-events: none;
 }

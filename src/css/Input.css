@@ -4,7 +4,7 @@
   align-items: center;
   margin: 10px 0;
 }
- 
+
 .Input {
   width: 80%; /* Ista širina kao dugme */
   padding: 10px; /* Prilagođava visinu */
@@ -16,22 +16,13 @@
   outline: none; /* Uklanja okvir pri fokusu */
   transition: all 0.3s ease; /* Glatka tranzicija */
 }
-<<<<<<< HEAD
 
-.custom-input::placeholder {
-=======
- 
 .Input::placeholder {
->>>>>>> 338aa09cf6ea3ea081990d2c24aa1a54f4b1f9be
   color: #826afb; /* Svetlija ljubičasta za placeholder tekst */
 }
- 
+
 .Input:focus {
   background-color: white; /* Menja pozadinu na belo pri fokusu */
   color: #826afb; /* Ljubičasti tekst pri fokusu */
   border: 1px solid #826afb; /* Ljubičasti obrub ostaje */
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 338aa09cf6ea3ea081990d2c24aa1a54f4b1f9be
