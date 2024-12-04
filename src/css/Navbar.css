@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Parkinsans:wght@300..800&display=swap");
+
 /* Navbar.css: Stilovi za navigaciju */
 .navbar {
   display: flex;
@@ -14,15 +16,31 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000000; /* Logo boja u #CBC6CE */
-  transition: color 0.3s ease; /* Tranzicija boje loga */
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  user-select: none;
 }
 
-.navbar .logo:hover {
-  color: #333; /* Logo se menja u tamniju nijansu crne pri hover-u */
+.logo-container:hover {
+  transform: scale(1.1);
+}
+
+.icon img {
+  width: 60px; /* Adjust width as needed */
+  height: 60px; /* Maintain aspect ratio */
+}
+
+.navbar .logo {
+  font-family: "Parkinsans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #826afb; /* Logo boja u #CBC6CE */
+  transition: color 0.3s ease; /* Tranzicija boje loga */
+  pointer-events: none;
 }
 
 .navbar ul {
@@ -64,4 +82,3 @@
   width: 100%;
   opacity: 1;
 }
-

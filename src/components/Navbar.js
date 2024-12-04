@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../css/Navbar.css"; // Uključivanje CSS-a za navbar
+import searchIcon from "../images/search.png";
 
 const Navbar = () => {
   // State to control visibility of the navbar
@@ -22,7 +23,12 @@ const Navbar = () => {
     <>
       {isVisible && (
         <nav className="navbar">
-          <div className="logo">Pronadji Se</div>
+          <div className="logo-container">
+            <div className="icon">
+              <img src={searchIcon} alt="Search Icon" className="icon" />
+            </div>
+            <div className="logo">PronađiSe</div>
+          </div>
           <ul>
             <li>
               <Link to="/">Naslovna</Link>
@@ -38,8 +44,8 @@ const Navbar = () => {
             </li>
           </ul>
           <button className="logbtn">
-            <Link style={{ color: "white" }} to="/signin">
-              Prijavi se
+            <Link to="/signin" className="link-style">
+              <strong>Prijavi se</strong>
             </Link>
           </button>
         </nav>

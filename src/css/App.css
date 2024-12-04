@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #CBC6CE; /* Pozadina za aplikaciju */
+  background-color: #cbc6ce; /* Pozadina za aplikaciju */
   color: black; /* Globalna boja teksta */
 }
 
@@ -13,7 +13,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .auth-form {
@@ -30,4 +31,26 @@ code {
   justify-content: center; /* Horizontally center */
   align-items: center; /* Vertically center */
   height: 100vh; /* Make container fill the full height of the viewport */
+}
+
+.logbtn {
+  background-color: #826afb; /* Purple background */
+  color: white;
+  border: white;
+  border-style: solid;
+  padding: 7px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.logbtn:hover {
+  transform: scale(1.1); /* Slightly increase size */
+  background-color: #cbc6ce; /* Darker purple on hover */
+}
+
+.link-style {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Ensures the link behaves like inline content */
 }

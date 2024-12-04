@@ -8,15 +8,17 @@ const Register = () => {
     <div>
       <div className="auth-container">
         <div className="auth-form">
-          <h1 style={{ color: "#6a0dad" }}>App logo</h1>
+          <h1 style={{ color: "#826afb" }}>App logo</h1>
           <Input placeholder={"Username"} />
           <Input placeholder={"Email"} />
           <Input placeholder={"Password"} />
           <Btn ime="Register" />
-          <p style={{ color: "#6a0dad" }}>
+          <p style={{ color: "#826afb" }}>
             Imate nalog?{" "}
             <strong>
-              <Link to="/signin">Ulogujte se!</Link>
+              <Link className="link-style" to="/signin">
+                Ulogujte se!
+              </Link>
             </strong>
           </p>
         </div>

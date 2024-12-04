@@ -8,14 +8,16 @@ const SignIn = () => {
     <div>
       <div className="auth-container">
         <div className="auth-form">
-          <h1 style={{ color: "#6a0dad" }}>App logo</h1>
+          <h1 style={{ color: "#826afb" }}>App logo</h1>
           <Input placeholder={"Email"} />
           <Input placeholder={"Password"} />
           <Btn ime="Sign In" />
-          <p style={{ color: "#6a0dad" }}>
+          <p style={{ color: "#826afb" }}>
             Nemate nalog?{" "}
             <strong>
-              <Link to="/register">Registrujte se sada!</Link>
+              <Link className="link-style" to="/register">
+                Registrujte se sada!
+              </Link>
             </strong>
           </p>
         </div>

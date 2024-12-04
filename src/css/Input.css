@@ -9,20 +9,20 @@
   width: 80%; /* Ista širina kao dugme */
   padding: 10px; /* Prilagođava visinu */
   font-size: 16px; /* Veličina teksta */
-  color: #6a0dad; /* Bela boja teksta unutar input-a */
+  color: #826afb; /* Bela boja teksta unutar input-a */
   background-color: #fff; /* Ljubičasta pozadina */
-  border: 2px solid #6a0dad; /* Tanak ljubičasti obrub */
+  border: 2px solid #826afb; /* Tanak ljubičasti obrub */
   border-radius: 8px; /* Blagi zaobljeni uglovi */
   outline: none; /* Uklanja okvir pri fokusu */
   transition: all 0.3s ease; /* Glatka tranzicija */
 }
 
 .custom-input::placeholder {
-  color: #6a0dad; /* Svetlija ljubičasta za placeholder tekst */
+  color: #826afb; /* Svetlija ljubičasta za placeholder tekst */
 }
 
 .custom-input:focus {
   background-color: white; /* Menja pozadinu na belo pri fokusu */
-  color: #6a0dad; /* Ljubičasti tekst pri fokusu */
-  border: 1px solid #6a0dad; /* Ljubičasti obrub ostaje */
+  color: #826afb; /* Ljubičasti tekst pri fokusu */
+  border: 1px solid #826afb; /* Ljubičasti obrub ostaje */
 }
