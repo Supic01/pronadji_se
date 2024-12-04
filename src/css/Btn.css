@@ -10,7 +10,7 @@
   transition: all 0.3s ease; /* Glatka tranzicija */
   margin-bottom: 12px;
 }
-
+ 
 .btn:hover {
   background-color: #826afb; /* Ljubičasta pozadina pri hoveru */
   color: white; /* Bela boja teksta pri hoveru */

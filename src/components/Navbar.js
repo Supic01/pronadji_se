@@ -44,8 +44,12 @@ const Navbar = () => {
             </li>
           </ul>
           <button className="logbtn">
-            <Link to="/signin" className="link-style">
-              <strong>Prijavi se</strong>
+            <Link
+              className="link-style"
+              style={{ color: "white" }}
+              to="/signin"
+            >
+              Prijavi se
             </Link>
           </button>
         </nav>
