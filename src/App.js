@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
+import Result from "./pages/Result";
 import SignIn from "./pages/SignIn";
 import Test from "./pages/Test";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
         <Footer />
       </div>

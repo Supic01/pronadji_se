@@ -45,6 +45,9 @@ const Navbar = () => {
             <li>
               <Link to="/profile">Profil Test</Link>
             </li>
+            <li>
+              <Link to="/result">Rezultat Test</Link>
+            </li>
           </ul>
           <button className="logbtn">
             <Link
