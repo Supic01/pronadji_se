@@ -6,7 +6,9 @@ import "./css/App.css";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 import Register from "./pages/Register";
+import Result from "./pages/Result";
 import SignIn from "./pages/SignIn";
 import Test from "./pages/Test";
 
@@ -31,6 +33,8 @@ function App() {
             path="/register"
             element={<Register setIsLoggedIn={setIsLoggedIn} />}
           />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
         <Footer />
       </div>

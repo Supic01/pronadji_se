@@ -42,6 +42,12 @@ const Navbar = ({ isLoggedIn }) => {
             <li>
               <Link to="/contact">Kontakt</Link>
             </li>
+            <li>
+              <Link to="/profile">Profil Test</Link>
+            </li>
+            <li>
+              <Link to="/result">Rezultat Test</Link>
+            </li>
           </ul>
           {isLoggedIn ? (
             <img src="./images/bojan.png" alt="User Icon" className="user-icon" />

@@ -4,7 +4,7 @@
   align-items: center;
   margin: 10px 0;
 }
- 
+
 .Input {
   width: 80%; /* Ista širina kao dugme */
   padding: 10px; /* Prilagođava visinu */
@@ -16,11 +16,10 @@
   outline: none; /* Uklanja okvir pri fokusu */
   transition: all 0.3s ease; /* Glatka tranzicija */
 }
- 
 .Input::placeholder {
   color: #826afb; /* Svetlija ljubičasta za placeholder tekst */
 }
- 
+
 .Input:focus {
   background-color: white; /* Menja pozadinu na belo pri fokusu */
   color: #826afb; /* Ljubičasti tekst pri fokusu */
