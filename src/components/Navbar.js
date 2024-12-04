@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "../css/Navbar.css"; // Uključivanje CSS-a za navbar
+import "../css/Navbar.css"; // CSS for the navbar
 import searchIcon from "../images/search.png";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn }) => {
   // State to control visibility of the navbar
   const [isVisible, setIsVisible] = useState(true);
 
@@ -43,15 +43,19 @@ const Navbar = () => {
               <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
-          <button className="logbtn">
-            <Link
-              className="link-style"
-              style={{ color: "white" }}
-              to="/signin"
-            >
-              Prijavi se
-            </Link>
-          </button>
+          {isLoggedIn ? (
+            <img src="./images/bojan.png" alt="User Icon" className="user-icon" />
+          ) : (
+            <button className="logbtn">
+              <Link
+                className="link-style"
+                style={{ color: "white" }}
+                to="/signin"
+              >
+                Prijavi se
+              </Link>
+            </button>
+          )}
         </nav>
       )}
     </>

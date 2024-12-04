@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -11,17 +11,26 @@ import SignIn from "./pages/SignIn";
 import Test from "./pages/Test";
 
 function App() {
+  // State to manage whether the user is logged in
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/test" element={<Test />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/register" element={<Register />} />
+          <Route
+            path="/signin"
+            element={<SignIn setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route
+            path="/register"
+            element={<Register setIsLoggedIn={setIsLoggedIn} />}
+          />
         </Routes>
         <Footer />
       </div>

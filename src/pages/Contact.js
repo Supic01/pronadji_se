@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-=======
-import React, { useState } from 'react';
-import Swal from 'sweetalert2';
->>>>>>> 338aa09cf6ea3ea081990d2c24aa1a54f4b1f9be
 import "../css/Contact.css";
 
 const Contact = () => {
