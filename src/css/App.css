@@ -133,3 +133,99 @@ body {
   transform: scale(1.1); /* Slightly increase size */
   background-color: #cbc6ce; /* Darker purple on hover */
 }
+
+/*Za profile pic*/
+.appicon {
+  width: 150px; /* Adjust width as needed */
+  height: 150px; /* Maintain aspect ratio */
+  margin-bottom: 30px;
+}
+
+.profile-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.profile-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+
+.edit-icon {
+  margin-left: 10px;
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Maintain aspect ratio */
+}
+
+.btn-delete {
+  background-color: white; /* Purple background */
+  color: red;
+  border: red;
+  border-style: solid;
+  padding: 7px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #cbc6ce;
+}
+
+.fax-img {
+  width: 40vw;
+  height: 20vw;
+  margin-left: 30px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.fax-card {
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  justify-items: center;
+}
+
+.fax-text {
+  margin-top: 10px;
+  max-width: 30vw;
+  margin-left: 20px;
+  word-wrap: break-word;
+}
+
+.fax-auth-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* light shadow to make the form stand out */
+  width: 900px; /* set a width for the form */
+  text-align: center; /* center text */
+}
+
+.fax-title {
+  margin-top: 10px;
+}
+
+.fax-profile-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  max-width: 80vw;
+}
