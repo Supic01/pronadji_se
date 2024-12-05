@@ -158,13 +158,14 @@ const Test = () => {
         console.error("No user is logged in!");
       }
   
-      // Navigate to Result.js
+      // Navigate to Result.js with state
       navigate("/result", { state: { highestCategory: formattedCategory } });
     } catch (error) {
       console.error("Error saving test results:", error);
       alert("Failed to save test results. Please try again.");
     }
   };
+  
   
 
   return (

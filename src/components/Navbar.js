@@ -1,4 +1,4 @@
-import { deleteDoc, doc, getDoc, updateDoc } from "firebase/firestore";
+import { deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../css/Navbar.css";
@@ -10,15 +10,16 @@ import profileIcon from "../images/user-profile.png";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isVisible, setIsVisible] = useState(true);
-  const [isPanelVisible, setIsPanelVisible] = useState(false); // Panel visibility
+  const [isPanelVisible, setIsPanelVisible] = useState(false);
   const [userData, setUserData] = useState({ username: "", email: "" });
   const [highestScore, setHighestScore] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [newUsername, setNewUsername] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Check login state and user data on page load
+  // Check login state and restore data from localStorage
   useEffect(() => {
     const storedLoginState = localStorage.getItem("isLoggedIn");
     const storedUserData = localStorage.getItem("userData");
@@ -29,70 +30,47 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
       if (storedUserData) {
         setUserData(JSON.parse(storedUserData));
       }
-      if (storedHighestScore) {
+      if (storedHighestScore !== "null" && storedHighestScore !== null) {
         setHighestScore(storedHighestScore);
       }
     }
   }, [setIsLoggedIn]);
 
-  // Store user data in localStorage when it changes
+  // Real-time Firestore listener for user data
   useEffect(() => {
-    if (isLoggedIn && userData.username) {
-      localStorage.setItem("isLoggedIn", true);
-      localStorage.setItem("userData", JSON.stringify(userData));
-      localStorage.setItem("highestScore", highestScore);
-    }
-  }, [isLoggedIn, userData, highestScore]);
+    const user = auth.currentUser;
 
-  useEffect(() => {
-    // Hide the navbar on specific routes
-    if (
-      location.pathname === "/signin" ||
-      location.pathname === "/register" ||
-      location.pathname === "/profile" ||
-      location.pathname === "/result"
-    ) {
-      setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
-  }, [location]);
+    if (user) {
+      const userDoc = doc(db, "users", user.uid);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const user = auth.currentUser;
+      const unsubscribe = onSnapshot(userDoc, (docSnap) => {
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setUserData({ username: data.username, email: data.email });
+          const updatedHighestScore = data.highestScore || null;
+          setHighestScore(updatedHighestScore);
 
-        if (user) {
-          const userDoc = doc(db, "users", user.uid);
-          const docSnap = await getDoc(userDoc);
-
-          if (docSnap.exists()) {
-            const data = docSnap.data();
-            setUserData({
-              username: data.username,
-              email: data.email,
-            });
-            setHighestScore(data.highestScore || null);
-          } else {
-            console.error("No such document!");
-          }
+          // Save data to localStorage
+          localStorage.setItem("highestScore", updatedHighestScore);
+          localStorage.setItem(
+            "userData",
+            JSON.stringify({ username: data.username, email: data.email })
+          );
         } else {
-          console.error("No user is logged in!");
+          console.error("No such document!");
         }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
+        setIsLoading(false); // Stop loading
+      });
 
-    if (isLoggedIn) {
-      fetchUserData();
+      return () => unsubscribe();
+    } else {
+      setIsLoading(false);
     }
   }, [isLoggedIn]);
 
   const handleEditClick = () => {
     setIsEditing(true);
-    setNewUsername(userData.username); // Pre-fill input with the current username
+    setNewUsername(userData.username);
   };
 
   const handleUsernameChange = async (e) => {
@@ -100,16 +78,28 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
       try {
         const userDoc = doc(db, "users", auth.currentUser.uid);
         await updateDoc(userDoc, { username: newUsername });
-        setUserData((prev) => ({
-          ...prev,
-          username: newUsername,
-        }));
+        setUserData((prev) => ({ ...prev, username: newUsername }));
         setIsEditing(false);
         alert("Username updated successfully!");
       } catch (error) {
         console.error("Error updating username:", error);
         alert("Failed to update username. Please try again.");
       }
+    }
+  };
+
+  const handleLogout = () => {
+    try {
+      auth.signOut();
+      setIsLoggedIn(false);
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("userData");
+      localStorage.removeItem("highestScore");
+      navigate("/");
+      alert("You have successfully logged out!");
+    } catch (error) {
+      console.error("Error logging out:", error);
+      alert("Failed to log out. Please try again.");
     }
   };
 
@@ -124,7 +114,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
         alert("Account deleted successfully!");
 
-        // Reset login state and clear localStorage
         setIsLoggedIn(false);
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("userData");
@@ -149,8 +138,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     setIsPanelVisible((prev) => !prev);
   };
 
-  // Function to check if the current link is active
-  const isActive = (path) => location.pathname === path ? "active" : "";
+  const isActive = (path) => (location.pathname === path ? "active" : "");
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
@@ -165,16 +155,24 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
           </div>
           <ul>
             <li>
-              <Link to="/" className={isActive("/")}>Naslovna</Link>
+              <Link to="/" className={isActive("/")}>
+                Naslovna
+              </Link>
             </li>
             <li>
-              <Link to="/about" className={isActive("/about")}>O nama</Link>
+              <Link to="/about" className={isActive("/about")}>
+                O nama
+              </Link>
             </li>
             <li>
-              <Link to="/test" className={isActive("/test")}>Test</Link>
+              <Link to="/test" className={isActive("/test")}>
+                Test
+              </Link>
             </li>
             <li>
-              <Link to="/contact" className={isActive("/contact")}>Kontakt</Link>
+              <Link to="/contact" className={isActive("/contact")}>
+                Kontakt
+              </Link>
             </li>
           </ul>
           {isLoggedIn ? (
@@ -183,7 +181,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                 className="user_icon"
                 src={profileIcon}
                 alt="Profile Icon"
-                onClick={togglePanel} // Toggle the profile panel visibility
+                onClick={togglePanel}
               />
               {isPanelVisible && (
                 <div className="profile-panel">
@@ -211,14 +209,21 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                   <div className="profile-row">
                     <h3>{userData.email}</h3>
                   </div>
-                  {highestScore && (
-                    <div className="profile-column">
-                      <h4>Vi ste obdareni za: {highestScore}</h4>
-                      <button className="btn btn-view-results" onClick={handleViewResults}>
-                        Prikaži moje rezultate
-                      </button>
-                    </div>
-                  )}
+                  <div className="profile-column">
+                    <h4>
+                      Vi ste obdareni za: {highestScore || "Nema podataka"}
+                    </h4>
+                    <button
+                      className="btn btn-view-results"
+                      onClick={handleViewResults}
+                      disabled={!highestScore}
+                    >
+                      Prikaži moje rezultate
+                    </button>
+                  </div>
+                  <button className="btn-logout" onClick={handleLogout}>
+                    <strong>Log Out</strong>
+                  </button>
                   <button className="btn-delete" onClick={handleDeleteAccount}>
                     <strong>Delete account</strong>
                   </button>
