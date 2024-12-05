@@ -61,6 +61,7 @@ const About = () => {
             <p>Testiranje i debugovanje koda kako bi sve radilo savršeno.</p>
             <p>Dokumentovanje projekta i pisanje vodiča za korisnike.</p>
             <p>Organizacija taskova i postavljanje prioriteta unutar tima.</p>
+            <p>Efikasno rešavanje problema kroz pažljivo analiziranje i optimizaciju postojećih rešenja.</p>
           </div>
           <div className="image-item right">
             <img src={LanaM} alt="Lana Mišić" className="round-image" />

@@ -92,7 +92,7 @@ const Result = () => {
                         color: expandedCategories.includes(category) ? "#629d9a" : "white",
                       }}
                     >
-                      {category} - {score}
+                      {category}-{(((score - 1) / 3) * 100).toFixed(2)}%
                     </h2>
                     {expandedCategories.includes(category) &&
                       (colleges[category] || []).map((college, index) => (
