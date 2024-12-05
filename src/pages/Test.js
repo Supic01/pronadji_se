@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
+import { doc, updateDoc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Test.css";
+import { auth, db } from "../firebase-config";
 
-// Pitanja sa kategorijama
+// Categories with questions
 const categories = {
-  matematika: [
+  Matematika: [
     "Uživam u rešavanju zadataka koji zahtevaju logično razmišljanje.",
     "Privlače me brojevi i analitički zadaci.",
     "Voleo/la bih da radim na problemima koji imaju tačna rešenja.",
@@ -12,7 +14,7 @@ const categories = {
     "Dobro se snalazim u situacijama koje zahtevaju proračune.",
     "Uživam u strukturiranom načinu razmišljanja.",
   ],
-  ekonomija: [
+  Ekonomija: [
     "Privlače me teme vezane za poslovanje i finansije.",
     "Volim da pratim kako se razvijaju društvene i privredne promene.",
     "Uživo bih diskutovao/la o trendovima i događajima u svetu.",
@@ -20,7 +22,7 @@ const categories = {
     "Zanima me način na koji funkcionišu različiti sistemi u društvu.",
     "Uvek tražim dublje razumevanje finansijskih odluka.",
   ],
-  umetnost: [
+  Umetnost: [
     "Volim da stvaram i izražavam svoje ideje kroz boje i oblike.",
     "Inspiraciju nalazim u stvarima koje me okružuju.",
     "Rado osmišljavam nove i kreativne projekte.",
@@ -28,7 +30,7 @@ const categories = {
     "Uživam u aktivnostima koje uključuju dizajn ili stvaranje.",
     "Često se izražavam kroz kreativne aktivnosti.",
   ],
-  jezici: [
+  Jezici: [
     "Lako mi je da naučim nove reči i izraze.",
     "Uživam u razumevanju kako se ljudi izražavaju u različitim kulturama.",
     "Voleo/la bih da komuniciram sa ljudima širom sveta.",
@@ -36,7 +38,7 @@ const categories = {
     "Čitanje i istraživanje novih načina izražavanja me motiviše.",
     "Privlače me razlike u načinima govora i komunikacije.",
   ],
-  tehnologija: [
+  Tehnologija: [
     "Često istražujem nove aplikacije i alate na internetu.",
     "Uvek tražim načine da unapredim veštine korišćenja uređaja.",
     "Zanima me kako funkcionišu uređaji i digitalni sistemi.",
@@ -44,7 +46,7 @@ const categories = {
     "Uživam u otkrivanju praktičnih načina primene novih tehnologija.",
     "Često istražujem tehničke teme i digitalne trendove.",
   ],
-  medicina: [
+  Medicina: [
     "Privlače me teme vezane za zdravlje i dobrobit ljudi.",
     "Često istražujem kako da pomognem drugima u teškim situacijama.",
     "Zanimaju me procesi koji poboljšavaju kvalitet života.",
@@ -52,7 +54,7 @@ const categories = {
     "Fasciniran/a sam načinom na koji funkcioniše ljudsko telo.",
     "Uživam u temama vezanim za istraživanje i inovacije u zdravstvu.",
   ],
-  arhitektura: [
+  Arhitektura: [
     "Volim da zamišljam i kreiram prostore koji su funkcionalni i estetski.",
     "Interesuje me kako prostor utiče na ponašanje i raspoloženje ljudi.",
     "Uživam u istraživanju novih materijala i tehnologija za gradnju.",
@@ -60,7 +62,7 @@ const categories = {
     "Zanima me uloga arhitekture u očuvanju kulturnog nasleđa i zaštiti prirode.",
     "Rado razmišljam o tome kako arhitektura može unaprediti društvenu povezanost.",
   ],
-  psihologija: [
+  Psihologija: [
     "Uživam u razumevanju ljudskog ponašanja i reakcija.",
     "Interesuje me kako emocije utiču na naše odluke i ponašanje.",
     "Rado istražujem načine za poboljšanje međuljudskih odnosa.",
@@ -70,7 +72,7 @@ const categories = {
   ],
 };
 
-// Funkcija za mešanje pitanja
+// Function to shuffle questions
 const shuffleQuestions = (categories) => {
   const mixedQuestions = [];
   for (const [category, questions] of Object.entries(categories)) {
@@ -84,10 +86,11 @@ const shuffleQuestions = (categories) => {
 const Test = () => {
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [responses, setResponses] = useState({});
-  const [results, setResults] = useState(null); // Dodato stanje za rezultate
+  const [results, setResults] = useState(null); // Store results for displaying
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Mešanje pitanja prilikom inicijalnog učitavanja
+    // Shuffle questions on load
     const mixed = shuffleQuestions(categories);
     setShuffledQuestions(mixed);
   }, []);
@@ -118,8 +121,7 @@ const Test = () => {
     return conclusions;
   };
 
-  const handleSubmit = () => {
-    // Proveriti da li su sva pitanja odgovarana
+  const handleSubmit = async () => {
     const unansweredQuestions = shuffledQuestions.filter(
       (_, index) => !responses[index]
     );
@@ -127,10 +129,43 @@ const Test = () => {
       alert("Morate odgovoriti na sva pitanja pre nego što pošaljete.");
       return;
     }
-
+  
     const conclusions = calculateConclusions();
-    setResults(conclusions); // Postavljanje rezultata u stanje
+  
+    // Find the category with the highest score
+    const highestCategory = Object.keys(conclusions).reduce((a, b) =>
+      conclusions[a] > conclusions[b] ? a : b
+    );
+  
+    // Capitalize the first letter to match Firestore document names
+    const formattedCategory =
+      highestCategory.charAt(0).toUpperCase() + highestCategory.slice(1);
+  
+    try {
+      const user = auth.currentUser;
+  
+      if (user) {
+        const userDoc = doc(db, "users", user.uid);
+  
+        // Save test results to Firestore
+        await updateDoc(userDoc, {
+          testResults: conclusions, // Save all scores
+          highestScore: formattedCategory, // Save the highest score category
+        });
+  
+        console.log("Test results saved successfully!");
+      } else {
+        console.error("No user is logged in!");
+      }
+  
+      // Navigate to Result.js
+      navigate("/result", { state: { highestCategory: formattedCategory } });
+    } catch (error) {
+      console.error("Error saving test results:", error);
+      alert("Failed to save test results. Please try again.");
+    }
   };
+  
 
   return (
     <div className="test-container">
@@ -154,21 +189,8 @@ const Test = () => {
         </div>
       ))}
       <button onClick={handleSubmit} className="submit-button">
-        Pošaljite odgovore
+        Pošalji odgovore
       </button>
-
-      {results && (
-        <div className="results">
-          <h2>Vaši rezultati:</h2>
-          <ul>
-            {Object.entries(results).map(([category, score]) => (
-              <li key={category}>
-                <strong>{category}:</strong> {score}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
