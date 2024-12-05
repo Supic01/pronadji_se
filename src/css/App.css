@@ -156,33 +156,10 @@ body {
   align-items: center;
 }
 
-.profile-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 17px;
-}
-
 .edit-icon {
   margin-left: 10px;
   width: 20px; /* Adjust width as needed */
   height: 20px; /* Maintain aspect ratio */
-}
-
-.btn-delete {
-  background-color: white; /* Purple background */
-  color: red;
-  border: red;
-  border-style: solid;
-  padding: 7px 20px;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-delete:hover {
-  background-color: #cbc6ce;
 }
 
 .fax-img {
@@ -328,4 +305,10 @@ body {
   flex-direction: column; /* Stack elements vertically */
   gap: 15px; /* Add spacing between elements */
   align-items: center; /* Center-align elements horizontally */
+}
+
+.profile-panel {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
