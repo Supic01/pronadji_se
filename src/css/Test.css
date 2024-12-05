@@ -1,56 +1,43 @@
-/* Glavni kontejner */
 .test-container {
   padding: 20px;
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffffff; /* Bela pozadina */
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
 }
 
-/* Naslov ankete */
 .test-container h1 {
   font-size: 24px;
+  color: white;
   margin-bottom: 20px;
-  color: white;  /* Boja slova postavljena na belo */
-  margin-bottom: 30px;
+  align-items: center;
 }
 
-/* Kontejner za svako pitanje */
 .question-container {
   display: flex;
-  justify-content: space-between;
-  align-items:flex-start;
-  background-color: rgba(92, 152, 112, 0.5); /* Svetla boja pozadine za polja sa pitanjima */
+  text-align: left;
+  background-color: rgba(92, 152, 112, 0.5);
   padding: 15px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .title-container {
-  justify-content: center;
-  align-items: center;
-  background-color: #629d9a; /* Svetla boja pozadine za polja sa pitanjima */
+  background-color: #629d9a;
   padding: 15px;
   border-radius: 8px;
-  margin-bottom: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  align-content: center;
-  width: 50vw;
-  margin-left: 245px;
-
 }
 
-/* Tekst pitanja */
 .question-container p {
   margin: 0;
   font-size: 16px;
-  color: #444; /* Bela boja slova */
-  flex: 1; /* Omogućava prostoru za pitanje da se rastegne */
+  color: #444;
+  flex: 1;
 }
 
-/* Grupa radio dugmadi */
 .radio-group {
   display: flex;
-  gap: 10px; /* Razmak između radio dugmadi */
+  gap: 10px;
 }
 
 .radio-group label {
@@ -62,27 +49,31 @@
 
 .radio-group input[type="radio"] {
   margin-right: 5px;
-  accent-color: #629d9a; /* Ljubičasta boja */
+  accent-color: #629d9a;
 }
 
-/* Dugme za slanje */
 .submit-button {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #a020f0; /* Ljubičasta boja */
+  padding: 15px 20px;
+  background-color: #629d9a;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  transition: transform 0.3 ease;
+  margin-bottom: 100px;
+  margin-top: 30px;
 }
 
 .submit-button:hover {
-  background-color: #7a14b0;
+  background-color: rgba(92, 152, 112, 0.5);
+  transform: scale(1.02);
+  transition: transform 0.3 ease;
 }
 
-/* Rezultati */
 .results {
   margin-top: 20px;
   padding: 10px;

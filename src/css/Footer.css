@@ -1,10 +1,30 @@
-/* Footer.css: Stilovi za footer */
 .footer {
-  background-color: #8b868f; /* Boja pozadine footera */
-  color: black; /* Boja teksta */
-  text-align: center;
-  width: 100%;
-  margin-top: auto; /* Guranje footera na dno sadržaja */
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  box-shadow: 1px -3px 4px rgba(0, 0, 0, 0.3);
+  background-color: rgba(92, 152, 112, 0.5) !important;
 }
 
+.footer-logo img {
+  width: 200px;
+  height: auto;
+}
+
+.footer-text {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  color: #444;
+}
+
+.footer-social a {
+  margin: 0 10px;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+}
