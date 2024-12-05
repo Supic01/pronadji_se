@@ -1,6 +1,8 @@
+import { doc, updateDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Test.css";
+import { auth, db } from "../firebase-config";
 
 // Categories with questions
 const categories = {
@@ -119,7 +121,7 @@ const Test = () => {
     return conclusions;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const unansweredQuestions = shuffledQuestions.filter(
       (_, index) => !responses[index]
     );
@@ -127,22 +129,43 @@ const Test = () => {
       alert("Morate odgovoriti na sva pitanja pre nego što pošaljete.");
       return;
     }
+  
     const conclusions = calculateConclusions();
-
+  
     // Find the category with the highest score
     const highestCategory = Object.keys(conclusions).reduce((a, b) =>
       conclusions[a] > conclusions[b] ? a : b
     );
-
+  
     // Capitalize the first letter to match Firestore document names
     const formattedCategory =
       highestCategory.charAt(0).toUpperCase() + highestCategory.slice(1);
-
-    console.log("Formatted category:", formattedCategory); // Log for debugging
-
-    // Navigate to Result.js with the correctly formatted category
-    navigate("/result", { state: { highestCategory: formattedCategory } });
+  
+    try {
+      const user = auth.currentUser;
+  
+      if (user) {
+        const userDoc = doc(db, "users", user.uid);
+  
+        // Save test results to Firestore
+        await updateDoc(userDoc, {
+          testResults: conclusions, // Save all scores
+          highestScore: formattedCategory, // Save the highest score category
+        });
+  
+        console.log("Test results saved successfully!");
+      } else {
+        console.error("No user is logged in!");
+      }
+  
+      // Navigate to Result.js
+      navigate("/result", { state: { highestCategory: formattedCategory } });
+    } catch (error) {
+      console.error("Error saving test results:", error);
+      alert("Failed to save test results. Please try again.");
+    }
   };
+  
 
   return (
     <div className="test-container">

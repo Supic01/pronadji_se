@@ -19,8 +19,10 @@ function App() {
   return (
     <Router>
       <div className="App">
+        {/* Pass isLoggedIn to the Navbar */}
         <Navbar isLoggedIn={isLoggedIn} />
         <Routes>
+          {/* Define routes and pass setIsLoggedIn where needed */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/test" element={<Test />} />
@@ -33,7 +35,10 @@ function App() {
             path="/register"
             element={<Register setIsLoggedIn={setIsLoggedIn} />}
           />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={<Profile setIsLoggedIn={setIsLoggedIn} />}
+          />
           <Route path="/result" element={<Result />} />
         </Routes>
         <Footer />
