@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #cbc6ce; /* Postavka boje pozadine za sve stranice */
+  height: 100%;
 }
 
 .App {
@@ -41,7 +42,9 @@ body {
   color: black; /* Boja teksta */
   text-align: center;
   width: 100%;
-  position: relative; /* Ostavlja footer ispod sadržaja */
+  margin-top: auto; /* Push footer to the bottom of the page */
+  padding: 1rem; /* Add some padding */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 .content {
@@ -62,7 +65,7 @@ body {
   display: flex;
   justify-content: center; /* Horizontally center */
   align-items: center; /* Vertically center */
-  height: 100vh; /* Make container fill the full height of the viewport */
+  height: 100%; /* Make container fill the full height of the viewport */
 }
 
 .Input-container {
@@ -95,7 +98,7 @@ body {
 }
 
 .btn {
-  width: 80%; /* Širina kao input polja */
+  width: 30%; /* Širina kao input polja */
   padding: 10px 0; /* Vertikalno poravnanje */
   font-size: 16px; /* Veličina fonta */
   color: #fff; /* Ljubičasti tekst */
@@ -105,10 +108,13 @@ body {
   cursor: pointer; /* Ikonica za pokazivač */
   transition: all 0.3s ease; /* Glatka tranzicija */
   margin-bottom: 12px;
+  font-weight: 700;
+  margin: 0 auto; /* Horizontalno centriranje */
+  display: block; /* Osigurava centriranje dugmeta */
 }
 
 .btn:hover {
-  background-color: #629d9a; /* Ljubičasta pozadina pri hoveru */
+  background-color: rgba(188, 206, 197, 0.5); /* Ljubičasta pozadina pri hoveru */
   color: white; /* Bela boja teksta pri hoveru */
 }
 
@@ -172,7 +178,6 @@ body {
 }
 
 .fax-card {
-  border-style: solid;
   border-color: black;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -188,7 +193,7 @@ body {
 }
 
 .fax-auth-form {
-  background-color: white;
+  background-color: rgba(52, 112, 82, 0.5);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* light shadow to make the form stand out */
@@ -205,6 +210,7 @@ body {
   flex-direction: row;
   margin-top: 10px;
   max-width: 80vw;
+  background-color: #629d9a;
 }
 
 /*-------------------------------------------------------------------------------------------------------------*/
@@ -214,7 +220,7 @@ body {
   max-width: 1200px; /* Set a maximum width for the container */
   margin: 0 auto; /* Center the container */
   padding: 20px; /* Add padding for spacing */
-  padding-top: 100px; /* Adjust for the navbar height */
+  padding-top: 30px; /* Adjust for the navbar height */
   box-sizing: border-box; /* Include padding and borders in size calculations */
   overflow: visible; /* Ensure all content is visible */
 }
@@ -236,20 +242,22 @@ body {
   text-align: center; /* Center the text */
   margin-bottom: 20px; /*  Add spacing below the heading */
   z-index: 10; /* Ensure it stays above other content */
-  background-color: #fff; /* Add a white background for contrast */
+  background-color: #629d9a; /* Add a white background for contrast */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   padding: 10px; /* Add padding around the heading */
   position: relative; /* Keep heading in normal flow */
+  border-radius: 8px;
+  color: white;
 }
 
 /* Fax-card styling */
 .fax-card {
-  border: 1px solid #ccc; /* Add a border for the card */
   border-radius: 8px; /* Rounded corners */
   padding: 20px; /* Add padding inside the card */
   margin-bottom: 20px; /* Add space between cards */
   overflow: visible; /* Ensure all content is visible */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  background-color: #fff; /* Use white for card background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+  background-color: #629d9a ; /* Use white for card background */
   display: flex; /* Use flexbox for alignment */
   flex-direction: column; /* Stack items vertically */
   width: 100%; /* Make cards span the full width of the container */
@@ -260,15 +268,16 @@ body {
 .fax-title {
   font-size: 1.8rem; /* Adjust the font size for the title */
   margin-bottom: 15px; /* Add spacing below the title */
-  color: #333; /* Darker text for readability */
+  color: white; /* Darker text for readability */
   text-align: center; /* Center the title */
+  font-weight: 500;
 }
 
 /* Text inside the fax-card */
 .fax-text {
-  font-size: 1rem; /* Standard readable font size */
+  font-size: 1.1rem; /* Standard readable font size */
   line-height: 1.6; /* Add spacing between lines */
-  color: #555; /* Use a lighter color for text */
+  color: white; /* Use a lighter color for text */
   text-align: justify; /* Justify text for cleaner alignment */
   word-wrap: break-word; /* Ensure long words break properly */
   margin-bottom: 15px; /* Add spacing below the text */
@@ -286,14 +295,16 @@ body {
 }
 
 /* Links inside the fax-card */
+
 .fax-profile-row a {
   font-size: 1rem; /* Standard readable font size */
-  color: #007bff; /* Use blue for links */
+  color: white; /* Use blue for links */
   text-decoration: none; /* Remove underline from links */
   margin-top: 10px; /* Add spacing above the link */
   text-align: center; /* Center-align the link */
   word-wrap: break-word; /* Ensure long links break properly */
 }
+
 
 .fax-profile-row a:hover {
   text-decoration: underline; /* Add underline on hover */
@@ -312,20 +323,3 @@ body {
   visibility: visible !important;
   opacity: 1 !important;
 }
-
-.btn-logout {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 10px 0;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.btn-logout:hover {
-  background-color: #0056b3;
-}
-

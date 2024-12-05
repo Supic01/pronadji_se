@@ -1,0 +1,97 @@
+/* Main container for the Result.js page */
+.auth-container {
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding for spacing */
+    padding-top: 100px; /* Adjust for the navbar height */
+    box-sizing: border-box; /* Include padding and borders in size calculations */
+    overflow: visible; /* Ensure all content is visible */
+  }
+  
+  /* Form holding the results */
+  .fax-auth-form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Add spacing between cards */
+    padding: 20px;
+    border: 1px solid #ddd; /* Optional border for debugging */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+    overflow: visible; /* Ensure all content is visible */
+  }
+  
+  /* Heading adjustments for the Result.js page */
+  .Rezultat {
+    font-size: 2rem; /* Adjust the font size */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /*  Add spacing below the heading */
+    z-index: 10; /* Ensure it stays above other content */
+    background-color: #fff; /* Add a white background for contrast */
+    padding: 10px; /* Add padding around the heading */
+    position: relative; /* Keep heading in normal flow */
+  }
+  
+  /* Fax-card styling */
+  .fax-card {
+    border: 1px solid #ccc; /* Add a border for the card */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Add padding inside the card */
+    margin-bottom: 20px; /* Add space between cards */
+    overflow: visible; /* Ensure all content is visible */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #fff; /* Use white for card background */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Make cards span the full width of the container */
+    box-sizing: border-box; /* Include padding and borders in size calculations */
+  }
+  
+  /* Faculty title */
+  .fax-title {
+    font-size: 1.8rem; /* Adjust the font size for the title */
+    margin-bottom: 15px; /* Add spacing below the title */
+    color: #333; /* Darker text for readability */
+    text-align: center; /* Center the title */
+  }
+  
+  /* Text inside the fax-card */
+  .fax-text {
+    font-size: 1rem; /* Standard readable font size */
+    line-height: 1.6; /* Add spacing between lines */
+    color: #555; /* Use a lighter color for text */
+    text-align: justify; /* Justify text for cleaner alignment */
+    word-wrap: break-word; /* Ensure long words break properly */
+    margin-bottom: 15px; /* Add spacing below the text */
+    overflow-wrap: break-word; /* Ensure text breaks properly */
+  }
+  
+  /* Image inside the fax-card */
+  .fax-img {
+    max-width: 100%; /* Ensure the image does not exceed the card width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px auto; /* Center the image */
+    border-radius: 8px; /* Add rounded corners */
+    object-fit: contain; /* Ensure the image fits within its container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  /* Links inside the fax-card */
+  .fax-profile-row a {
+    font-size: 1rem; /* Standard readable font size */
+    color: #007bff; /* Use blue for links */
+    text-decoration: none; /* Remove underline from links */
+    margin-top: 10px; /* Add spacing above the link */
+    text-align: center; /* Center-align the link */
+    word-wrap: break-word; /* Ensure long links break properly */
+  }
+  
+  .fax-profile-row a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  /* Profile row styling */
+  .fax-profile-row {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Add spacing between elements */
+    align-items: center; /* Center-align elements horizontally */
+  }

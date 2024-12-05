@@ -1,39 +1,66 @@
-import React from 'react';
-import "../css/About.css"; // Dodaj CSS za stilizaciju
-import LanaV from "../images/lanaV.png"
-import Bojan from "../images/bojan.png"
-import LanaM from "../images/lanaM.png"
-import Zarko from "../images/zarko.png"
+import React from "react";
+import "../css/About.css";
+import Bojan from "../images/bojan.png";
+import LanaM from "../images/lanaM.png";
+import LanaV from "../images/lanaV.png";
+import Zarko from "../images/zarko.png";
 
 const About = () => {
-
   return (
     <div className="about-container">
-      {/* Kartica sa tekstom */}
       <div className="about-containerB">
-          <h1>Ko smo mi</h1>
-          <p>
-            Dobrodošli na našu platformu! Ovdje možete saznati sve o mogućnostima studiranja na različitim fakultetima. Naša misija je pomoći studentima da izaberu pravi put ka svojoj budućnosti. Naša platforma nudi sve potrebne informacije o fakultetima, programima i mogućnostima karijere. Verujemo da je obrazovanje temelj svakog uspeha, a naš cilj je učiniti ovaj proces što lakšim i pristupačnijim. Pridružite nam se na ovom putovanju i pronađite fakultet koji vam odgovara. Pružamo vam alate i resurse koji će vam pomoći da donosite informisane odluke o vašem obrazovanju. Sa nama ćete biti spremni za sledeći korak u vašem obrazovanju. Krenite zajedno sa nama ka boljoj budućnosti!
-          </p>
-        </div>
+        <h1>Ko smo mi</h1>
+        <p>
+          Mi smo učenici četvrtog razreda gimnazije i strastveni zaljubljenici u
+          svet tehnologije i obrazovanja! Naša misija je kreirati platformu koja
+          pomaže mladima da pronađu svoj put ka uspehu kroz prave izbore.
+        </p>
+        <p>
+          Lana Vukotić donosi savršenstvo u dizajnu i kreativnosti. Bojan Cakić
+          majstorski rešava kompleksne zadatke u backend razvoju, dok Žarko
+          Supić uvodi inovacije u svaki aspekt našeg rada. Lana Mišić svojim
+          smirenim pristupom obezbeđuje kvalitet i strukturu. Zajedno činimo tim
+          pun entuzijazma i posvećenosti, željni da ostavimo trag. Naša
+          platforma je odraz naše energije i želje da inspirišemo mlade ljude ka
+          odvažnim koracima. Gimnazijalci smo sa misijom!
+        </p>
+      </div>
 
-      {/* Prva kartica (slika levo, tekst desno) */}
       <div className="card-container">
         <div className="card">
           <div className="image-item left">
             <img src={Zarko} alt="Žarko Šupić" className="round-image" />
           </div>
           <div className="text-item">
-            <p>Ovo je random tekst sa desne strane slike. Može biti bilo koji tekst koji želite.</p>
+            <p>
+              <strong>Žarko Supić</strong> profesionalac u:
+            </p>
+            <p>
+              Eksperimentisanje sa novim JavaScript framework-ovima (React,
+              Vue).
+            </p>
+            <p>
+              Integracija modernih tehnologija poput AI-a u web aplikacije.
+            </p>
+            <p>
+              Razvoj interaktivnih funkcionalnosti (npr. dinamični testovi za
+              profesionalnu orijentaciju).
+            </p>
+            <p>Rad sa alatima za verzionisanje koda (Git, GitHub).</p>
           </div>
         </div>
       </div>
 
-      {/* Druga kartica (slika desno, tekst levo) */}
       <div className="card-container">
         <div className="card reverse">
           <div className="text-item">
-            <p>Ovo je random tekst sa leve strane slike. Možete promeniti sadržaj prema potrebama.</p>
+            <p>
+              <strong>Lana Mišić</strong> profesionalac u:
+            </p>
+            <p>Frontend razvoj (React, Tailwind CSS).</p>
+            <p>Testiranje i debugovanje koda kako bi sve radilo savršeno.</p>
+            <p>Dokumentovanje projekta i pisanje vodiča za korisnike.</p>
+            <p>Organizacija taskova i postavljanje prioriteta unutar tima.</p>
           </div>
           <div className="image-item right">
             <img src={LanaM} alt="Lana Mišić" className="round-image" />
@@ -41,23 +68,43 @@ const About = () => {
         </div>
       </div>
 
-      {/* Treća kartica (slika levo, tekst desno) */}
       <div className="card-container">
         <div className="card">
           <div className="image-item left">
             <img src={Bojan} alt="Bojan Cakić" className="round-image" />
           </div>
           <div className="text-item">
-            <p>Ovo je još jedan random tekst sa desne strane slike. Svaka kartica može imati jedinstven sadržaj.</p>
+            <p>
+              <strong>Bojan Cakić</strong> profesionalac u:
+            </p>
+            <p>Backend razvoj (Node.js, Firebase).</p>
+            <p>
+              Rad sa bazama podataka i strukturiranje podataka (Firestore, SQL).
+            </p>
+            <p>
+              Optimizacija performansi sajta i rešavanje kompleksnih logičkih
+              problema.
+            </p>
+            <p>Automatizacija procesa i pravljenje API-ja.</p>
           </div>
         </div>
       </div>
 
-      {/* Četvrta kartica (slika desno, tekst levo) */}
       <div className="card-container">
         <div className="card reverse">
           <div className="text-item">
-            <p>Ovo je još jedan primer teksta sa leve strane, dok je slika sa desne strane. Flexbox je koristan za ovakve rasporede.</p>
+            <p>
+              <strong>Lana Vukotić</strong> profesionalac u:
+            </p>
+            <p>UI/UX dizajn i optimizacija korisničkog iskustva.</p>
+            <p>
+              Eksperimentisanje sa modernim CSS animacijama i responsive
+              dizajnom.
+            </p>
+            <p>Osmišljavanje intuitivnih struktura za navigaciju.</p>
+            <p>
+              Rad na održivosti i prilagodljivosti sajta za različite uređaje.
+            </p>
           </div>
           <div className="image-item right">
             <img src={LanaV} alt="Lana Vukotić" className="round-image" />

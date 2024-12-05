@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "../css/Test.css";
 import { auth, db } from "../firebase-config";
 
-// Categories with questions
 const categories = {
   Matematika: [
     "Uživam u rešavanju zadataka koji zahtevaju logično razmišljanje.",
@@ -72,7 +71,6 @@ const categories = {
   ],
 };
 
-// Function to shuffle questions
 const shuffleQuestions = (categories) => {
   const mixedQuestions = [];
   for (const [category, questions] of Object.entries(categories)) {
@@ -86,11 +84,10 @@ const shuffleQuestions = (categories) => {
 const Test = () => {
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [responses, setResponses] = useState({});
-  const [results, setResults] = useState(null); // Store results for displaying
+  const [results, setResults] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Shuffle questions on load
     const mixed = shuffleQuestions(categories);
     setShuffledQuestions(mixed);
   }, []);
@@ -129,36 +126,32 @@ const Test = () => {
       alert("Morate odgovoriti na sva pitanja pre nego što pošaljete.");
       return;
     }
-  
+
     const conclusions = calculateConclusions();
-  
-    // Find the category with the highest score
+
     const highestCategory = Object.keys(conclusions).reduce((a, b) =>
       conclusions[a] > conclusions[b] ? a : b
     );
-  
-    // Capitalize the first letter to match Firestore document names
+
     const formattedCategory =
       highestCategory.charAt(0).toUpperCase() + highestCategory.slice(1);
-  
+
     try {
       const user = auth.currentUser;
-  
+
       if (user) {
         const userDoc = doc(db, "users", user.uid);
-  
-        // Save test results to Firestore
+
         await updateDoc(userDoc, {
-          testResults: conclusions, // Save all scores
-          highestScore: formattedCategory, // Save the highest score category
+          testResults: conclusions,
+          highestScore: formattedCategory,
         });
-  
+
         console.log("Test results saved successfully!");
       } else {
         console.error("No user is logged in!");
       }
-  
-      // Navigate to Result.js with state
+
       navigate("/result", { state: { highestCategory: formattedCategory } });
     } catch (error) {
       console.error("Error saving test results:", error);
@@ -190,7 +183,7 @@ const Test = () => {
         </div>
       ))}
       <button onClick={handleSubmit} className="submit-button">
-        Pošalji odgovore
+        <strong>Pošalji odgovore</strong>
       </button>
     </div>
   );

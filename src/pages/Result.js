@@ -12,6 +12,7 @@ const Result = () => {
   const [expandedCategories, setExpandedCategories] = useState([highestCategory]); // Categories currently expanded
   const [showAllCategories, setShowAllCategories] = useState(false); // Show all categories or not
 
+  
   useEffect(() => {
     const fetchResults = async () => {
       try {
@@ -82,7 +83,7 @@ const Result = () => {
     <div>
       <div className="auth-container">
         <div className="fax-auth-form">
-          <h1 className="Rezultat">Rezultati vašeg testa su:</h1>
+          <h1 className="Rezultat">Rezultati vašeg testa:</h1>
           {allResults.length > 0 && (
             <div>
               {allResults
@@ -94,7 +95,7 @@ const Result = () => {
                       onClick={() => toggleCategory(category)}
                       style={{
                         cursor: "pointer",
-                        color: expandedCategories.includes(category) ? "blue" : "black",
+                        color: expandedCategories.includes(category) ? "#629d9a" : "white",
                       }}
                     >
                       {category} - {score}
@@ -112,11 +113,6 @@ const Result = () => {
                             >
                               Posetite sajt fakulteta
                             </a>
-                            <img
-                              src={college.imageUrl}
-                              alt={college.fakultet}
-                              className="fax-img"
-                            />
                           </div>
                         </div>
                       ))}
@@ -130,7 +126,7 @@ const Result = () => {
             </button>
           ) : (
             <button className="btn" onClick={handleShowAll}>
-              Pokaži detaljnije rezultate
+              Pokaži više podataka
             </button>
           )}
         </div>

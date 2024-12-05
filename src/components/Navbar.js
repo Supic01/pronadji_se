@@ -207,21 +207,21 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                     />
                   </div>
                   <div className="profile-row">
-                    <h3>{userData.email}</h3>
+                    <p>{userData.email}</p>
                   </div>
                   <div className="profile-column">
-                    <h4>
-                      Vi ste obdareni za: {highestScore || "Nema podataka"}
-                    </h4>
+                    <p>
+                      Vi ste obdareni za: <strong>{highestScore || "Nema podataka"}</strong>
+                    </p>
                     <button
-                      className="btn btn-view-results"
+                      className="btn-view-results"
                       onClick={handleViewResults}
                       disabled={!highestScore}
                     >
-                      Prikaži moje rezultate
+                     <strong>Moji rezultati</strong>
                     </button>
                   </div>
-                  <button className="btn-logout" onClick={handleLogout}>
+                  <button className="btn-view-results" onClick={handleLogout}>
                     <strong>Log Out</strong>
                   </button>
                   <button className="btn-delete" onClick={handleDeleteAccount}>

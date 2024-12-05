@@ -1,99 +1,178 @@
 @import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Parkinsans:wght@300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* Navbar.css: Stilovi za navigaciju */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   color: black;
-
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo-container {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  /* Vraćeno na normalno stanje, uklonjen hover efekt uvećanja */
-  user-select: none;
 }
 
 .icon img {
-  width: 170px; /* Smanjeno sa 60px na 50px radi balansa */
+  width: 170px;
   height: 40px;
-  margin-right: 15px; /* Pomeranje ikone od teksta */
+  margin-right: 15px;
 }
 
-.navbar .logo {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.7rem; /* Smanjeno sa 2.2rem na 2rem */
-  font-weight: bold;
-  color: #629d9a; /* Ljubičasta boja */
-  letter-spacing: 1px; /* Umeren razmak između slova */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Suptilna senka */
-  transition: color 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-.navbar .logo:hover {
-  color: #629d9a; /* Svetlija ljubičasta pri hover-u */
-  transform: translateY(-3px); /* Dodajemo nežno pomeranje na hover */
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
-.navbar ul li {
-  display: inline;
+ul li {
+  margin: 0 15px;
 }
 
-.navbar ul li a {
-  color: #333; /* Tamnija nijansa crne za linkove */
+ul li a {
   text-decoration: none;
+  color: black;
   font-size: 1rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.navbar ul li a:hover {
-  color: #629d9a; /* Ljubičasta boja prilikom hover-a */
+ul li a:hover {
+  color: #629d9a;
   transform: scale(1.1);
 }
 
-.navbar ul li a::after {
-  content: "";
-  margin: auto;
-  display: block;
-  width: 0%;
-  height: 2px;
-  background-color: #629d9a; /* Ljubičasta boja za hover liniju */
-  opacity: 0;
-  transition: 0.6s;
+ul li a.active {
+  color: #629d9a;
+  font-weight: 600;
+  border-bottom: 2px solid #629d9a;
 }
 
-.navbar ul li a:hover::after {
-  width: 100%;
-  opacity: 1;
+.profile-icon-container {
+  position: relative;
+  cursor: pointer;
 }
 
 .user_icon {
-  width: 45px;
-  height: 45px;
-  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #629d9a;
+  transition: transform 0.3s ease-in-out;
 }
 
 .user_icon:hover {
+  transform: rotate(360deg);
+}
+
+.profile-panel {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  z-index: 10;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.profile-row h2, 
+.profile-row h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.profile-column p {
+  margin-bottom: 50px;
+}
+
+.edit-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.btn-view-results {
+  background-color: white !important;
+  border-color: #629d9a !important; 
+  color: #629d9a !important;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view-results:hover {
+  background-color: #629d9a;
+}
+
+.btn-delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: darkred;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul li {
+    margin: 10px 0;
+  }
+
+  .profile-panel {
+    width: 90%;
+  }
+}
+
+.logo-container .icon img {
+  width: 170px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-container .icon img:hover {
   transform: scale(1.1);
-  transition: transform 0.3 s ease;
 }

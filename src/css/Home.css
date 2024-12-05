@@ -1,23 +1,23 @@
 .hero {
-  height: 100vh; /* Cela visina prozora */
-  background-image: url('../images/kompas.png'); /* Pozadina */
-  background-position: center; /* Centriranje slike */
-  background-size: cover; /* Pokrivanje ekrana */
-  background-repeat: no-repeat; /* Bez ponavljanja slike */
+  height: 100vh;
+  background-image: url('../images/kompas.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  align-items: center; /* Vertikalno centriranje sadržaja */
+  align-items: center;
 }
 
 .left-text {
-  position: absolute; /* Pozicionira tekst apsolutno u odnosu na roditelja */
-  top: 20%; /* Pomeranje teksta na 20% visine ekrana od vrha */
-  left: 0; /* Poravnanje sa levom ivicom ekrana */
+  position: absolute;
+  top: 20%;
+  left: 0;
   padding: 20px;
-  color: white; /* Boja teksta za kontrast */
-  background-color: rgba(52, 112, 82, 0.5); /* Tamna pozadina sa prozirnošću */
-  width: 40%; /* Povećavanje širine teksta */
-  border-radius: 8px; /* Blago zaobljeni uglovi */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Senka za bolju čitljivost */
+  color: white;
+  background-color: rgba(52, 112, 82, 0.5);
+  width: 40%;
+  border-radius: 8px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
   margin-left: 20px;
   margin-top: 100px;
 }
@@ -34,52 +34,51 @@
 }
 
 .cards-container {
-  display: flex; /* Aktivacija Flexbox-a */
-  justify-content: center; /* Poravnanje kartica na sredini */
-  gap: 20px; /* Razmak između kartica */
-  margin: 30px 0; /* Dodavanje razmaka između hero sekcije i kartica */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
 }
 
 .cardG {
-  background-color: #629d9a; /* Boja pozadine kartica */
-  color: white; /* Bela boja teksta */
-  border-radius: 8px; /* Zaobljeni uglovi */
+  background-color: #629d9a;
+  color: white;
+  border-radius: 8px;
   padding: 20px;
-  width: 300px; /* Fiksna širina kartica */
+  width: 300px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Senka */
-  opacity: 0; /* Kartice su inicijalno nevidljive */
-  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out; /* Dodavanje prelaza za transformaciju */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Animacija za fade-in */
 .cardG.show {
-  opacity: 1; /* Kartice postaju vidljive */
+  opacity: 1;
 }
 
 .cardG:hover {
-  transform: scale(1.03); /* Manje uvećanje, sa boljim prelazom */
+  transform: scale(1.03);
 }
 
 .card-link {
-  display: inline-block; /* Blok za lakše stilizovanje */
-  margin-top: 15px; /* Razmak između teksta i linka */
-  padding: 10px 20px; /* Unutrašnji razmak za dugme izgled */
-  color: white; /* Bela boja teksta */
-  text-decoration: none; /* Uklanjanje podvlačenja */
-  font-weight: bold; /* Podebljan tekst */
-  background-color: rgba(0, 0, 0, 0.3); /* Prozirna crna pozadina */
-  border-radius: 8px; /* Zaobljeni uglovi */
-  transition: background-color 1.5s ease, transform 0.3s ease; /* Efekat promena na hover */
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  transition: background-color 1.5s ease, transform 0.3s ease;
 }
 
 .card-link:hover {
-  background-color: rgba(0, 0, 0, 0.5); /* Tamnija nijansa na hover */
-  transform: translateY(-3px); /* Blagi podizanje dugmeta na hover */
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
 }
 
 .cardG h2 {
-  font-size: 1.5rem; /* Povećanje fonta za 2 u odnosu na originalnu vrednost (2.5rem -> 3.5rem) */
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Senka teksta */
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   margin-bottom: 5px;
 }
