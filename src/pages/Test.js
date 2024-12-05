@@ -4,7 +4,7 @@ import "../css/Test.css";
 
 // Categories with questions
 const categories = {
-  matematika: [
+  Matematika: [
     "Uživam u rešavanju zadataka koji zahtevaju logično razmišljanje.",
     "Privlače me brojevi i analitički zadaci.",
     "Voleo/la bih da radim na problemima koji imaju tačna rešenja.",
@@ -12,7 +12,7 @@ const categories = {
     "Dobro se snalazim u situacijama koje zahtevaju proračune.",
     "Uživam u strukturiranom načinu razmišljanja.",
   ],
-  ekonomija: [
+  Ekonomija: [
     "Privlače me teme vezane za poslovanje i finansije.",
     "Volim da pratim kako se razvijaju društvene i privredne promene.",
     "Uživo bih diskutovao/la o trendovima i događajima u svetu.",
@@ -20,7 +20,7 @@ const categories = {
     "Zanima me način na koji funkcionišu različiti sistemi u društvu.",
     "Uvek tražim dublje razumevanje finansijskih odluka.",
   ],
-  umetnost: [
+  Umetnost: [
     "Volim da stvaram i izražavam svoje ideje kroz boje i oblike.",
     "Inspiraciju nalazim u stvarima koje me okružuju.",
     "Rado osmišljavam nove i kreativne projekte.",
@@ -28,7 +28,7 @@ const categories = {
     "Uživam u aktivnostima koje uključuju dizajn ili stvaranje.",
     "Često se izražavam kroz kreativne aktivnosti.",
   ],
-  jezici: [
+  Jezici: [
     "Lako mi je da naučim nove reči i izraze.",
     "Uživam u razumevanju kako se ljudi izražavaju u različitim kulturama.",
     "Voleo/la bih da komuniciram sa ljudima širom sveta.",
@@ -36,7 +36,7 @@ const categories = {
     "Čitanje i istraživanje novih načina izražavanja me motiviše.",
     "Privlače me razlike u načinima govora i komunikacije.",
   ],
-  tehnologija: [
+  Tehnologija: [
     "Često istražujem nove aplikacije i alate na internetu.",
     "Uvek tražim načine da unapredim veštine korišćenja uređaja.",
     "Zanima me kako funkcionišu uređaji i digitalni sistemi.",
@@ -44,7 +44,7 @@ const categories = {
     "Uživam u otkrivanju praktičnih načina primene novih tehnologija.",
     "Često istražujem tehničke teme i digitalne trendove.",
   ],
-  medicina: [
+  Medicina: [
     "Privlače me teme vezane za zdravlje i dobrobit ljudi.",
     "Često istražujem kako da pomognem drugima u teškim situacijama.",
     "Zanimaju me procesi koji poboljšavaju kvalitet života.",
@@ -52,7 +52,7 @@ const categories = {
     "Fasciniran/a sam načinom na koji funkcioniše ljudsko telo.",
     "Uživam u temama vezanim za istraživanje i inovacije u zdravstvu.",
   ],
-  arhitektura: [
+  Arhitektura: [
     "Volim da zamišljam i kreiram prostore koji su funkcionalni i estetski.",
     "Interesuje me kako prostor utiče na ponašanje i raspoloženje ljudi.",
     "Uživam u istraživanju novih materijala i tehnologija za gradnju.",
@@ -60,7 +60,7 @@ const categories = {
     "Zanima me uloga arhitekture u očuvanju kulturnog nasleđa i zaštiti prirode.",
     "Rado razmišljam o tome kako arhitektura može unaprediti društvenu povezanost.",
   ],
-  psihologija: [
+  Psihologija: [
     "Uživam u razumevanju ljudskog ponašanja i reakcija.",
     "Interesuje me kako emocije utiču na naše odluke i ponašanje.",
     "Rado istražujem načine za poboljšanje međuljudskih odnosa.",
@@ -84,10 +84,11 @@ const shuffleQuestions = (categories) => {
 const Test = () => {
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [responses, setResponses] = useState({});
-  const [results, setResults] = useState(null);
-  const navigate = useNavigate(); // For programmatic navigation
+  const [results, setResults] = useState(null); // Store results for displaying
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Shuffle questions on load
     const mixed = shuffleQuestions(categories);
     setShuffledQuestions(mixed);
   }, []);
@@ -126,10 +127,21 @@ const Test = () => {
       alert("Morate odgovoriti na sva pitanja pre nego što pošaljete.");
       return;
     }
-
     const conclusions = calculateConclusions();
-    setResults(conclusions);
-    navigate("/result", { state: { results: conclusions } });
+
+    // Find the category with the highest score
+    const highestCategory = Object.keys(conclusions).reduce((a, b) =>
+      conclusions[a] > conclusions[b] ? a : b
+    );
+
+    // Capitalize the first letter to match Firestore document names
+    const formattedCategory =
+      highestCategory.charAt(0).toUpperCase() + highestCategory.slice(1);
+
+    console.log("Formatted category:", formattedCategory); // Log for debugging
+
+    // Navigate to Result.js with the correctly formatted category
+    navigate("/result", { state: { highestCategory: formattedCategory } });
   };
 
   return (

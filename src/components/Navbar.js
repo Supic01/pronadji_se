@@ -46,9 +46,6 @@ const Navbar = ({ isLoggedIn }) => {
             <li>
               <Link to="/contact">Kontakt</Link>
             </li>
-            <li>
-              <Link to="/result">Rezultat Test</Link>
-            </li>
           </ul>
           {isLoggedIn ? (
             <Link to="/profile">
