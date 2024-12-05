@@ -1,97 +1,138 @@
-/* Main container for the Result.js page */
 .auth-container {
-    max-width: 1200px; /* Set a maximum width for the container */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Add padding for spacing */
-    padding-top: 100px; /* Adjust for the navbar height */
-    box-sizing: border-box; /* Include padding and borders in size calculations */
-    overflow: visible; /* Ensure all content is visible */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 100px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.fax-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+}
+
+.Rezultat {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  z-index: 10;
+  background-color: #fff;
+  padding: 10px;
+  position: relative;
+}
+
+.fax-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: visible;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fax-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.fax-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+  overflow-wrap: break-word;
+}
+
+.fax-img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fax-profile-row a {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.fax-profile-row a:hover {
+  text-decoration: underline;
+}
+
+.fax-profile-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
   }
-  
-  /* Form holding the results */
-  .fax-auth-form {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px; /* Add spacing between cards */
-    padding: 20px;
-    border: 1px solid #ddd; /* Optional border for debugging */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
-    overflow: visible; /* Ensure all content is visible */
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  /* Heading adjustments for the Result.js page */
-  .Rezultat {
-    font-size: 2rem; /* Adjust the font size */
-    text-align: center; /* Center the text */
-    margin-bottom: 20px; /*  Add spacing below the heading */
-    z-index: 10; /* Ensure it stays above other content */
-    background-color: #fff; /* Add a white background for contrast */
-    padding: 10px; /* Add padding around the heading */
-    position: relative; /* Keep heading in normal flow */
+  .card-container, .about-container, .about-containerB {
+    flex-direction: column;
+    padding: 10px;
   }
-  
-  /* Fax-card styling */
-  .fax-card {
-    border: 1px solid #ccc; /* Add a border for the card */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Add padding inside the card */
-    margin-bottom: 20px; /* Add space between cards */
-    overflow: visible; /* Ensure all content is visible */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    background-color: #fff; /* Use white for card background */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    width: 100%; /* Make cards span the full width of the container */
-    box-sizing: border-box; /* Include padding and borders in size calculations */
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
   }
-  
-  /* Faculty title */
-  .fax-title {
-    font-size: 1.8rem; /* Adjust the font size for the title */
-    margin-bottom: 15px; /* Add spacing below the title */
-    color: #333; /* Darker text for readability */
-    text-align: center; /* Center the title */
+  .image-item, .text-item {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  /* Text inside the fax-card */
-  .fax-text {
-    font-size: 1rem; /* Standard readable font size */
-    line-height: 1.6; /* Add spacing between lines */
-    color: #555; /* Use a lighter color for text */
-    text-align: justify; /* Justify text for cleaner alignment */
-    word-wrap: break-word; /* Ensure long words break properly */
-    margin-bottom: 15px; /* Add spacing below the text */
-    overflow-wrap: break-word; /* Ensure text breaks properly */
+  .round-image {
+    max-width: 100%;
+    height: auto;
   }
-  
-  /* Image inside the fax-card */
-  .fax-img {
-    max-width: 100%; /* Ensure the image does not exceed the card width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px auto; /* Center the image */
-    border-radius: 8px; /* Add rounded corners */
-    object-fit: contain; /* Ensure the image fits within its container */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
   }
-  
-  /* Links inside the fax-card */
-  .fax-profile-row a {
-    font-size: 1rem; /* Standard readable font size */
-    color: #007bff; /* Use blue for links */
-    text-decoration: none; /* Remove underline from links */
-    margin-top: 10px; /* Add spacing above the link */
-    text-align: center; /* Center-align the link */
-    word-wrap: break-word; /* Ensure long links break properly */
+  .footer {
+    font-size: 12px;
+    padding: 10px;
   }
-  
-  .fax-profile-row a:hover {
-    text-decoration: underline; /* Add underline on hover */
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
   }
-  
-  /* Profile row styling */
-  .fax-profile-row {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    gap: 15px; /* Add spacing between elements */
-    align-items: center; /* Center-align elements horizontally */
+  .card-container h1 {
+    font-size: 1.5rem;
   }
+  .card-container p {
+    font-size: 0.9rem;
+  }
+}

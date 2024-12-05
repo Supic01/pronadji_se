@@ -19,7 +19,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Check login state and restore data from localStorage
   useEffect(() => {
     const storedLoginState = localStorage.getItem("isLoggedIn");
     const storedUserData = localStorage.getItem("userData");
@@ -36,7 +35,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     }
   }, [setIsLoggedIn]);
 
-  // Real-time Firestore listener for user data
   useEffect(() => {
     const user = auth.currentUser;
 
@@ -50,7 +48,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
           const updatedHighestScore = data.highestScore || null;
           setHighestScore(updatedHighestScore);
 
-          // Save data to localStorage
           localStorage.setItem("highestScore", updatedHighestScore);
           localStorage.setItem(
             "userData",
@@ -59,7 +56,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         } else {
           console.error("No such document!");
         }
-        setIsLoading(false); // Stop loading
+        setIsLoading(false); 
       });
 
       return () => unsubscribe();

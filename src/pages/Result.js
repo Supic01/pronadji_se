@@ -2,17 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../css/App.css";
-import { auth, db } from "../firebase-config"; // Import auth and db
+import { auth, db } from "../firebase-config";
 
 const Result = () => {
   const location = useLocation();
-  const { highestCategory } = location.state; // Get the highest score category
-  const [colleges, setColleges] = useState([]); // Faculties for the displayed category
-  const [allResults, setAllResults] = useState([]); // All categories and their scores
-  const [expandedCategories, setExpandedCategories] = useState([highestCategory]); // Categories currently expanded
-  const [showAllCategories, setShowAllCategories] = useState(false); // Show all categories or not
+  const { highestCategory } = location.state;
+  const [colleges, setColleges] = useState([]);
+  const [allResults, setAllResults] = useState([]);
+  const [expandedCategories, setExpandedCategories] = useState([highestCategory]);
+  const [showAllCategories, setShowAllCategories] = useState(false);
 
-  
   useEffect(() => {
     const fetchResults = async () => {
       try {
@@ -22,16 +21,13 @@ const Result = () => {
         if (userDocSnap.exists()) {
           const results = userDocSnap.data().testResults;
           const sortedResults = Object.entries(results)
-            .sort(([, a], [, b]) => b - a) // Sort by scores descending
+            .sort(([, a], [, b]) => b - a)
             .map(([category, score]) => ({ category, score }));
 
           setAllResults(sortedResults);
 
-          // Fetch faculties for the highest-scoring category by default
           const highestCategoryColleges = await fetchCollegesForCategory(highestCategory);
           setColleges({ [highestCategory]: highestCategoryColleges });
-        } else {
-          console.error("User test results not found!");
         }
       } catch (error) {
         console.error("Error fetching test results:", error);
@@ -48,8 +44,6 @@ const Result = () => {
 
       if (docSnap.exists()) {
         return docSnap.data().faculties || [];
-      } else {
-        console.error(`No such document for category: ${category}`);
       }
     } catch (error) {
       console.error(`Error fetching colleges for category: ${category}`, error);
@@ -71,12 +65,12 @@ const Result = () => {
 
   const handleShowAll = () => {
     setShowAllCategories(true);
-    setExpandedCategories([]); // Ensure no categories are expanded initially
+    setExpandedCategories([]);
   };
 
   const handleShowLess = () => {
     setShowAllCategories(false);
-    setExpandedCategories([highestCategory]); // Reset to only the highest category
+    setExpandedCategories([highestCategory]);
   };
 
   return (
@@ -87,7 +81,7 @@ const Result = () => {
           {allResults.length > 0 && (
             <div>
               {allResults
-                .filter(({ category }) => showAllCategories || category === highestCategory) // Show all or just the highest
+                .filter(({ category }) => showAllCategories || category === highestCategory)
                 .map(({ category, score }) => (
                   <div key={category}>
                     <h2

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #cbc6ce; /* Postavka boje pozadine za sve stranice */
+  background-color: #cbc6ce;
   height: 100%;
 }
 
@@ -9,13 +9,12 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Omogućava da sadržaj ispuni visinu ekrana */
+  min-height: 100vh;
 }
 
 .hero {
   height: 100vh;
-  background: url("https://via.placeholder.com/1920x1080") no-repeat center
-    center/cover;
+  background: url("https://via.placeholder.com/1920x1080") no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,13 +37,13 @@ body {
 }
 
 .footer {
-  background-color: #cbc6ce; /* Boja footera */
-  color: black; /* Boja teksta */
+  background-color: #cbc6ce;
+  color: black;
   text-align: center;
   width: 100%;
-  margin-top: auto; /* Push footer to the bottom of the page */
-  padding: 1rem; /* Add some padding */
-  box-sizing: border-box; /* Include padding in width */
+  margin-top: auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .content {
@@ -56,16 +55,16 @@ body {
   background-color: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* light shadow to make the form stand out */
-  width: 400px; /* set a width for the form */
-  text-align: center; /* center text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  width: 400px;
+  text-align: center;
 }
 
 .auth-container {
   display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-  height: 100%; /* Make container fill the full height of the viewport */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .Input-container {
@@ -76,56 +75,59 @@ body {
 }
 
 .Input {
-  width: 80%; /* Ista širina kao dugme */
-  padding: 10px; /* Prilagođava visinu */
-  font-size: 16px; /* Veličina teksta */
-  color: #629d9a; /* Bela boja teksta unutar input-a */
-  background-color: #fff; /* Ljubičasta pozadina */
-  border: 2px solid #629d9a; /* Tanak ljubičasti obrub */
-  border-radius: 8px; /* Blagi zaobljeni uglovi */
-  outline: none; /* Uklanja okvir pri fokusu */
-  transition: all 0.3s ease; /* Glatka tranzicija */
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  color: #629d9a;
+  background-color: #fff;
+  border: 2px solid #629d9a;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 .Input::placeholder {
-  color: #629d9a; /* Svetlija ljubičasta za placeholder tekst */
+  color: #629d9a;
 }
 
 .Input:focus {
-  background-color: white; /* Menja pozadinu na belo pri fokusu */
-  color: #629d9a; /* Ljubičasti tekst pri fokusu */
-  border: 1px solid #629d9a; /* Ljubičasti obrub ostaje */
+  background-color: white;
+  color: #629d9a;
+  border: 1px solid #629d9a;
 }
 
 .btn {
-  width: 30%; /* Širina kao input polja */
-  padding: 10px 0; /* Vertikalno poravnanje */
-  font-size: 16px; /* Veličina fonta */
-  color: #fff; /* Ljubičasti tekst */
-  background-color: #629d9a; /* Bela pozadina */
-  border: 2px solid #629d9a; /* Ljubičasti obrub */
-  border-radius: 8px; /* Blagi zaobljeni uglovi */
-  cursor: pointer; /* Ikonica za pokazivač */
-  transition: all 0.3s ease; /* Glatka tranzicija */
-  margin-bottom: 12px;
+  width: 30%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  background-color: #629d9a;
+  border: 2px solid #629d9a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   font-weight: 700;
-  margin: 0 auto; /* Horizontalno centriranje */
-  display: block; /* Osigurava centriranje dugmeta */
+  margin: 0 auto;
+  display: block;
 }
 
 .btn:hover {
-  background-color: rgba(188, 206, 197, 0.5); /* Ljubičasta pozadina pri hoveru */
-  color: white; /* Bela boja teksta pri hoveru */
+  background-color: rgba(188, 206, 197, 0.5);
+  color: white;
 }
 
 .link-style {
-  color: inherit; /* Inherit color from parent */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Ensures the link behaves like inline content */
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.mini-text {
+  margin-top: 10px;
 }
 
 .logbtn {
-  background-color: #629d9a; /* Purple background */
+  background-color: #629d9a;
   color: white;
   border: white;
   border-style: solid;
@@ -136,14 +138,13 @@ body {
 }
 
 .logbtn:hover {
-  transform: scale(1.1); /* Slightly increase size */
-  background-color: #cbc6ce; /* Darker purple on hover */
+  transform: scale(1.1);
+  background-color: #cbc6ce;
 }
 
-/*Za profile pic*/
 .appicon {
-  width: 150px; /* Adjust width as needed */
-  height: 150px; /* Maintain aspect ratio */
+  width: 150px;
+  height: 150px;
   margin-bottom: 30px;
 }
 
@@ -164,8 +165,8 @@ body {
 
 .edit-icon {
   margin-left: 10px;
-  width: 20px; /* Adjust width as needed */
-  height: 20px; /* Maintain aspect ratio */
+  width: 20px;
+  height: 20px;
 }
 
 .fax-img {
@@ -196,9 +197,9 @@ body {
   background-color: rgba(52, 112, 82, 0.5);
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* light shadow to make the form stand out */
-  width: 900px; /* set a width for the form */
-  text-align: center; /* center text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  width: 900px;
+  text-align: center;
 }
 
 .fax-title {
@@ -213,113 +214,150 @@ body {
   background-color: #629d9a;
 }
 
-/*-------------------------------------------------------------------------------------------------------------*/
-
-/* Main container for the Result.js page */
 .auth-container {
-  max-width: 1200px; /* Set a maximum width for the container */
-  margin: 0 auto; /* Center the container */
-  padding: 20px; /* Add padding for spacing */
-  padding-top: 30px; /* Adjust for the navbar height */
-  box-sizing: border-box; /* Include padding and borders in size calculations */
-  overflow: visible; /* Ensure all content is visible */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 30px;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
-/* Form holding the results */
 .fax-auth-form {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  gap: 20px; /* Add spacing between cards */
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
-  border: 1px solid #ddd; /* Optional border for debugging */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
-  overflow: visible; /* Ensure all content is visible */
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: visible;
 }
 
-/* Heading adjustments for the Result.js page */
 .Rezultat {
-  font-size: 2rem; /* Adjust the font size */
-  text-align: center; /* Center the text */
-  margin-bottom: 20px; /*  Add spacing below the heading */
-  z-index: 10; /* Ensure it stays above other content */
-  background-color: #629d9a; /* Add a white background for contrast */
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  z-index: 10;
+  background-color: #629d9a;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  padding: 10px; /* Add padding around the heading */
-  position: relative; /* Keep heading in normal flow */
+  padding: 10px;
+  position: relative;
   border-radius: 8px;
   color: white;
 }
 
-/* Fax-card styling */
 .fax-card {
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Add padding inside the card */
-  margin-bottom: 20px; /* Add space between cards */
-  overflow: visible; /* Ensure all content is visible */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-  background-color: #629d9a ; /* Use white for card background */
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack items vertically */
-  width: 100%; /* Make cards span the full width of the container */
-  box-sizing: border-box; /* Include padding and borders in size calculations */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: visible;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: #629d9a;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Faculty title */
 .fax-title {
-  font-size: 1.8rem; /* Adjust the font size for the title */
-  margin-bottom: 15px; /* Add spacing below the title */
-  color: white; /* Darker text for readability */
-  text-align: center; /* Center the title */
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: white;
+  text-align: center;
   font-weight: 500;
 }
 
-/* Text inside the fax-card */
 .fax-text {
-  font-size: 1.1rem; /* Standard readable font size */
-  line-height: 1.6; /* Add spacing between lines */
-  color: white; /* Use a lighter color for text */
-  text-align: justify; /* Justify text for cleaner alignment */
-  word-wrap: break-word; /* Ensure long words break properly */
-  margin-bottom: 15px; /* Add spacing below the text */
-  overflow-wrap: break-word; /* Ensure text breaks properly */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+  text-align: justify;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+  overflow-wrap: break-word;
 }
 
-/* Image inside the fax-card */
 .fax-img {
-  max-width: 100%; /* Ensure the image does not exceed the card width */
-  height: auto; /* Maintain aspect ratio */
-  margin: 10px auto; /* Center the image */
-  border-radius: 8px; /* Add rounded corners */
-  object-fit: contain; /* Ensure the image fits within its container */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* Links inside the fax-card */
 
 .fax-profile-row a {
-  font-size: 1rem; /* Standard readable font size */
-  color: white; /* Use blue for links */
-  text-decoration: none; /* Remove underline from links */
-  margin-top: 10px; /* Add spacing above the link */
-  text-align: center; /* Center-align the link */
-  word-wrap: break-word; /* Ensure long links break properly */
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
+  word-wrap: break-word;
 }
-
 
 .fax-profile-row a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline;
 }
 
-/* Profile row styling */
 .fax-profile-row {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  gap: 15px; /* Add spacing between elements */
-  align-items: center; /* Center-align elements horizontally */
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .profile-panel {
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-container, .about-container, .about-containerB {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+  .image-item, .text-item {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .round-image {
+    max-width: 100%;
+    height: auto;
+  }
+  .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+  .footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  .card-container h1 {
+    font-size: 1.5rem;
+  }
+  .card-container p {
+    font-size: 0.9rem;
+  }
 }

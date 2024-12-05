@@ -1,83 +1,123 @@
-/* Sekcija sa kontaktom */
 .contact {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+form button {
+  width: 100%;
+  height: 55px;
+  background: #629d9a;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  margin-top: 25px;
+  transition: 0.5s;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+form button:hover {
+  background: #529d99;
+}
+
+form {
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(52, 112, 82, 0.5);
+  padding: 25px 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  color: white;
+  margin: 25px;
+}
+
+form h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+form .input-box {
+  margin-top: 20px;
+}
+
+.input-box .field {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #ddd;
+  outline: none;
+  border-radius: 6px;
+  padding: 15px;
+  font-size: 16px;
+  color: white;
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.input-box .field::placeholder {
+  color: white;
+}
+
+.input-box .field.mess {
+  height: 200px;
+  resize: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-container, .about-container, .about-containerB {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .card {
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    background-color: white;
-  }
-  
-  /* Stil dugmeta unutar forme */
-  form button {
-    width: 100%;
-    height: 55px;
-    background: #629d9a; /* Nova boja za dugme */
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    color: white; /* Bela boja teksta na dugmetu */
-    font-weight: 500;
-    margin-top: 25px;
-    transition: 0.5s;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Senka na dugmetu */
-  }
-  
-  /* Hover efekat za dugme */
-  form button:hover {
-    background: #529d99; /* Tamnija nijansa na hover */
-  }
-  
-  /* Forma unutar kontakta */
-  form {
-    max-width: 600px;
-    width: 100%;
-    background-color: rgba(52, 112, 82, 0.5); /* Tamna poluprozirna pozadina, kao u .left-text */
-    padding: 25px 25px 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    color: white; /* Bela boja teksta, kao u .left-text */
-    margin: 25px;
-  }
-  
-  /* Naslov unutar forme */
-  form h2 {
-    font-size: 30px;
     text-align: center;
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Senka za kontrast, kao u .left-text */
-  }
-  
-  /* Sekcija sa poljima unutar forme */
-  form .input-box {
-    margin-top: 20px;
-  }
-  
-  /* Stil za polja u formi */
-  .input-box .field {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #ddd;
-    outline: none;
-    border-radius: 6px;
     padding: 15px;
-    font-size: 16px;
-    color: white; /* Bela boja teksta u poljima */
-    margin-top: 8px;
-    font-family: Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.3); /* Tamna pozadina sa prozirnošću u polju */
   }
-  
-  /* Placeholder stil za polja u formi */
-  .input-box .field::placeholder {
-    color: white; /* Bela boja za placeholder */
+  .image-item, .text-item {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  /* Polje za poruku u formi */
-  .input-box .field.mess {
-    height: 200px;
-    resize: none;
+  .round-image {
+    max-width: 100%;
+    height: auto;
   }
-  
+  .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+  .footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  .card-container h1 {
+    font-size: 1.5rem;
+  }
+  .card-container p {
+    font-size: 0.9rem;
+  }
+}

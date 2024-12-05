@@ -1,31 +1,29 @@
-﻿/* Panel styles */
-.profile-panel {
+﻿.profile-panel {
   align-items: center;
   position: absolute;
   margin-top: 25px;
-  top: 60px; /* Position it below the navbar */
-  right: 20px; /* Position it on the right side */
+  top: 60px; 
+  right: 20px; 
   background-color: white;
   border: 1px solid #ccc;
   padding: 20px;
   box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
   width: 250px;
-  z-index: 1000; /* Ensure it appears on top */
+  z-index: 1000; 
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  opacity: 0; /* Start with the panel hidden */
-  transform: translateY(-20px); /* Start slightly above */
-  visibility: hidden; /* Ensure it is not clickable when hidden */
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; /* Smooth transition */
+  opacity: 0; 
+  transform: translateY(-20px); 
+  visibility: hidden; 
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; 
 }
 
-/* When panel is visible */
 .profile-panel.visible {
-  opacity: 1; /* Make it visible */
-  transform: translateY(0); /* Slide it to the final position */
-  visibility: visible; /* Make it clickable */
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s; /* Add visibility transition */
+  opacity: 1; 
+  transform: translateY(0); 
+  visibility: visible; 
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s; 
 }
 
 .profile-row {
@@ -79,4 +77,53 @@
 
 .profile-panel .close-btn:hover {
   color: red;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .card-container, .about-container, .about-containerB {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+    .image-item, .text-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .round-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px;
+    }
+    .footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    .card-container h1 {
+        font-size: 1.5rem;
+    }
+    .card-container p {
+        font-size: 0.9rem;
+    }
 }

@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "../css/Contact.css";
 const Contact = () => {
-  // Stanja za unos u formi
+
   const [formData, setFormData] = useState({
     ime: "",
     email: "",
     poruka: ""
   });
 
-  // Funkcija za ažuriranje stanja prilikom unosa
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -40,7 +39,6 @@ const Contact = () => {
         icon: "success"
       });
 
-      // Resetovanje polja u formi
       setFormData({
         ime: "",
         email: "",
@@ -60,8 +58,8 @@ const Contact = () => {
             className='field'
             placeholder='Unesite ime i prezime!'
             name='ime'
-            value={formData.ime} // Vezivanje vrednosti sa stanjem
-            onChange={handleChange} // Ažuriranje stanja na unos
+            value={formData.ime} 
+            onChange={handleChange} 
             required
           />
         </div>
@@ -72,8 +70,8 @@ const Contact = () => {
             className='field'
             placeholder='Unesite vaš email!'
             name='email'
-            value={formData.email} // Vezivanje vrednosti sa stanjem
-            onChange={handleChange} // Ažuriranje stanja na unos
+            value={formData.email} 
+            onChange={handleChange} 
             required
           />
         </div>
@@ -83,8 +81,8 @@ const Contact = () => {
             name='poruka'
             className='field mess'
             placeholder='Unesite vašu poruku!'
-            value={formData.poruka} // Vezivanje vrednosti sa stanjem
-            onChange={handleChange} // Ažuriranje stanja na unos
+            value={formData.poruka} 
+            onChange={handleChange} 
             required
           ></textarea>
         </div>

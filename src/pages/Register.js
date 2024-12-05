@@ -1,14 +1,14 @@
 ﻿import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore"; // Firestore functions
+import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase-config.js";
 
 const Register = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const register = async () => {
     if (!username || !email || !password) {
@@ -23,7 +23,6 @@ const Register = ({ setIsLoggedIn }) => {
     }
 
     try {
-      // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -31,7 +30,6 @@ const Register = ({ setIsLoggedIn }) => {
       );
       const user = userCredential.user;
 
-      // Store username and email in Firestore
       await setDoc(doc(db, "users", user.uid), {
         username: username,
         email: email,
@@ -39,10 +37,8 @@ const Register = ({ setIsLoggedIn }) => {
 
       alert("Account created successfully!");
 
-      // Set logged-in state
       setIsLoggedIn(true);
 
-      // Redirect to home page
       navigate("/");
     } catch (error) {
       alert(`Error: ${error.message}`);
@@ -53,7 +49,7 @@ const Register = ({ setIsLoggedIn }) => {
     <div>
       <div className="auth-container">
         <div className="auth-form">
-          <h1 style={{ color: "#6a0dad" }}>App logo</h1>
+          <h1 style={{ color: "#629d9a" }}>Register</h1>
           <div className="Input-container">
             <input
               className="Input"
@@ -80,7 +76,7 @@ const Register = ({ setIsLoggedIn }) => {
           <button className="btn" onClick={register}>
             Register
           </button>
-          <p style={{ color: "#6a0dad" }}>
+          <p style={{ color: "#629d9a" }} className="mini-text">
             Imate nalog?{" "}
             <strong>
               <Link className="link-style" to="/signin">

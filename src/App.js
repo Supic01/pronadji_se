@@ -12,13 +12,13 @@ import SignIn from "./pages/SignIn";
 import Test from "./pages/Test";
   
 function App() {
-  // State to manage whether the user is logged in
+
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("isLoggedIn") === "true"
   );
 
   useEffect(() => {
-    // Update localStorage whenever the isLoggedIn state changes
+    
     localStorage.setItem("isLoggedIn", isLoggedIn);
   }, [isLoggedIn]);
 

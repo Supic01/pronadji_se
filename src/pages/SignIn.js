@@ -23,7 +23,6 @@ const SignIn = ({ setIsLoggedIn }) => {
       );
       const user = userCredential.user;
 
-      // Fetch user information from Firestore
       const userDocRef = doc(db, "users", user.uid);
       const userDoc = await getDoc(userDocRef);
 
@@ -36,7 +35,6 @@ const SignIn = ({ setIsLoggedIn }) => {
         );
       }
 
-      // Set logged-in state and navigate
       setIsLoggedIn(true);
       navigate("/");
     } catch (error) {
@@ -49,7 +47,7 @@ const SignIn = ({ setIsLoggedIn }) => {
     <div>
       <div className="auth-container">
         <div className="auth-form">
-          <h1 style={{ color: "#826afb" }}>App logo</h1>
+          <h1 style={{ color: "#629d9a" }}>Sign in</h1>
           <div className="Input-container">
             <input
               className="Input"
@@ -67,9 +65,9 @@ const SignIn = ({ setIsLoggedIn }) => {
             />
           </div>
           <button className="btn" onClick={signin}>
-            Sign In
+            Sign in
           </button>
-          <p style={{ color: "#826afb" }}>
+          <p style={{ color: "#629d9a" }} className="mini-text">
             Nemate nalog?{" "}
             <strong>
               <Link className="link-style" to="/register">
