@@ -24,11 +24,11 @@ const Profile = () => {
         <div className="auth-form">
           <img src={AccountIcon} className="appicon"></img>
           <div className="profile-row">
-            <h2 style={{ color: "#826afb" }}>Lana Misic</h2>
+            <h2 style={{ color: "#000000" }}>Lana Misic</h2>
             <img src={EditIcon} className="edit-icon"></img>
           </div>
           <div className="profile-row">
-            <h3 style={{ color: "#826afb" }}>misicl@gmail.com</h3>
+            <h3 style={{ color: "#000000" }}>misicl@gmail.com</h3>
           </div>
           <div className="profile-column">
             <h4>Test result:</h4>

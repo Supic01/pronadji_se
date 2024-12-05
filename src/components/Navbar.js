@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "../css/Navbar.css"; // CSS for the navbar
 import searchIcon from "../images/search.png";
 
+
 const Navbar = ({ isLoggedIn }) => {
   // State to control visibility of the navbar
   const [isVisible, setIsVisible] = useState(true);
@@ -29,7 +30,6 @@ const Navbar = ({ isLoggedIn }) => {
               <div className="icon">
                 <img src={searchIcon} alt="Search Icon" className="icon" />
               </div>
-              <div className="logo">Pronadji Se</div>
             </Link>
           </div>
           <ul>

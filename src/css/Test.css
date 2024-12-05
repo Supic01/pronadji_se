@@ -1,7 +1,7 @@
 /* Glavni kontejner */
 .test-container {
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #ffffff; /* Bela pozadina */
   }
   
@@ -48,7 +48,7 @@
   
   .radio-group input[type="radio"] {
     margin-right: 5px;
-    accent-color: #a020f0; /* Ljubičasta boja */
+    accent-color: #629d9a; /* Ljubičasta boja */
   }
   
   /* Dugme za slanje */

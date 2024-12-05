@@ -1,15 +1,18 @@
-import React from 'react';
+import React from "react";
 import "../css/Home.css";
-import Navbar from "../components/Navbar";
+import Pozadina from "../images/kompas.png";
 
 const Home = () => {
   return (
     <div className="home">
       <div className="hero">
-        <h1 className='white'>Pronadji se</h1>
-      </div>
-      <div className="content">
-        <p>Ovde nesto pise</p>
+        <div className="left-text">
+          <h1>Pronađi se</h1>
+          <p>
+            Izbor budućnosti nije lak. Često se osećamo izgubljeno pred 
+            mnogobrojnim mogućnostima, dok vreme neumoljivo prolazi. Ali, uz pravu podršku i korake, svaki put postaje jasniji.
+          </p>
+        </div>
       </div>
     </div>
   );

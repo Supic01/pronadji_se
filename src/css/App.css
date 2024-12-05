@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #cbc6ce; /* Postavka boje pozadine za sve stranice */
 }
 
@@ -76,22 +76,22 @@ body {
   width: 80%; /* Ista širina kao dugme */
   padding: 10px; /* Prilagođava visinu */
   font-size: 16px; /* Veličina teksta */
-  color: #826afb; /* Bela boja teksta unutar input-a */
+  color: #629d9a; /* Bela boja teksta unutar input-a */
   background-color: #fff; /* Ljubičasta pozadina */
-  border: 2px solid #826afb; /* Tanak ljubičasti obrub */
+  border: 2px solid #629d9a; /* Tanak ljubičasti obrub */
   border-radius: 8px; /* Blagi zaobljeni uglovi */
   outline: none; /* Uklanja okvir pri fokusu */
   transition: all 0.3s ease; /* Glatka tranzicija */
 }
 
 .Input::placeholder {
-  color: #826afb; /* Svetlija ljubičasta za placeholder tekst */
+  color: #629d9a; /* Svetlija ljubičasta za placeholder tekst */
 }
 
 .Input:focus {
   background-color: white; /* Menja pozadinu na belo pri fokusu */
-  color: #826afb; /* Ljubičasti tekst pri fokusu */
-  border: 1px solid #826afb; /* Ljubičasti obrub ostaje */
+  color: #629d9a; /* Ljubičasti tekst pri fokusu */
+  border: 1px solid #629d9a; /* Ljubičasti obrub ostaje */
 }
 
 .btn {
@@ -99,8 +99,8 @@ body {
   padding: 10px 0; /* Vertikalno poravnanje */
   font-size: 16px; /* Veličina fonta */
   color: #fff; /* Ljubičasti tekst */
-  background-color: #826afb; /* Bela pozadina */
-  border: 2px solid #826afb; /* Ljubičasti obrub */
+  background-color: #629d9a; /* Bela pozadina */
+  border: 2px solid #629d9a; /* Ljubičasti obrub */
   border-radius: 8px; /* Blagi zaobljeni uglovi */
   cursor: pointer; /* Ikonica za pokazivač */
   transition: all 0.3s ease; /* Glatka tranzicija */
@@ -108,7 +108,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #826afb; /* Ljubičasta pozadina pri hoveru */
+  background-color: #629d9a; /* Ljubičasta pozadina pri hoveru */
   color: white; /* Bela boja teksta pri hoveru */
 }
 
@@ -119,7 +119,7 @@ body {
 }
 
 .logbtn {
-  background-color: #826afb; /* Purple background */
+  background-color: #629d9a; /* Purple background */
   color: white;
   border: white;
   border-style: solid;

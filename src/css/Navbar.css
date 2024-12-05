@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Parkinsans:wght@300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 
 /* Navbar.css: Stilovi za navigaciju */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  background-color: #ffffff;
   color: black;
+  
 
   padding: 1rem 2rem;
   position: sticky;
@@ -30,17 +33,17 @@
 }
 
 .icon img {
-  width: 50px; /* Smanjeno sa 60px na 50px radi balansa */
+  width: 100; /* Smanjeno sa 60px na 50px radi balansa */
   height: 50px;
   margin-right: 15px; /* Pomeranje ikone od teksta */
 }
 
 .navbar .logo {
-  font-family: "Parkinsans", sans-serif;
+  font-family:'Poppins', sans-serif;
   font-size: 1.7rem; /* Smanjeno sa 2.2rem na 2rem */
   font-weight: bold;
-  
-  color: #6a4df8; /* Ljubičasta boja */
+
+  color: #629d9a; /* Ljubičasta boja */
   letter-spacing: 1px; /* Umeren razmak između slova */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Suptilna senka */
   transition: color 0.3s ease, transform 0.3s ease; 
@@ -48,7 +51,7 @@
 }
 
 .navbar .logo:hover {
-  color: #9570e8; /* Svetlija ljubičasta pri hover-u */
+  color: #629d9a; /* Svetlija ljubičasta pri hover-u */
   transform: translateY(-3px); /* Dodajemo nežno pomeranje na hover */
 }
 
@@ -72,7 +75,7 @@
 }
 
 .navbar ul li a:hover {
-  color: #6a4df8; /* Ljubičasta boja prilikom hover-a */
+  color: #629d9a; /* Ljubičasta boja prilikom hover-a */
   transform: scale(1.1); 
 }
 
@@ -82,7 +85,7 @@
   display: block;
   width: 0%;
   height: 2px;
-  background-color: #6a4df8; /* Ljubičasta boja za hover liniju */
+  background-color: #629d9a; /* Ljubičasta boja za hover liniju */
   opacity: 0;
   transition: 0.6s;
 }
