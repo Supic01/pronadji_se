@@ -1,4 +1,3 @@
-/* Stil za karticu sa tekstom u centru */
 .card-container {
   display: flex;
   justify-content: center;
@@ -7,7 +6,7 @@
   margin-top: 40px;
   background-color: #fff;
   padding: 20px;
-  margin-top: 5px; /* Smanjen razmak od vrha */
+  margin-top: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   max-width: 800px;
@@ -18,12 +17,12 @@
   text-align: center;
   color: black;
   border-radius: 12px;
-  width: auto; /* Automatska širina za karticu */
-  margin-bottom: 5px; /* Smanjen razmak između kartica */
+  width: auto;
+  margin-bottom: 5px;
   transition: transform 0.2s ease;
 }
 
-.card-container:hover{
+.card-container:hover {
   transform: scale(1.01);
   transition: transform 0.3s ease;
 }
@@ -36,7 +35,7 @@
   margin-top: 40px;
   background-color: #fff;
   padding: 20px;
-  margin-top: 5px; /* Smanjen razmak od vrha */
+  margin-top: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   max-width: 800px;
@@ -45,11 +44,11 @@
   font-size: 18px;
   line-height: 1.6;
   text-align: center;
-  background-color: rgba(78, 148, 113, 0.5); /* Pozadina sa senkom (za karticu "Ko smo mi") */
+  background-color: rgba(78, 148, 113, 0.5);
   color: white;
   border-radius: 12px;
-  width: auto; /* Automatska širina za karticu */
-  margin-bottom: 30px; /* Smanjen razmak između kartica */
+  width: auto;
+  margin-bottom: 30px;
 }
 
 .about-containerB {
@@ -60,7 +59,7 @@
   margin-top: 40px;
   background-color: #fff;
   padding: 20px;
-  margin-top: 5px; /* Smanjen razmak od vrha */
+  margin-top: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   max-width: 800px;
@@ -72,20 +71,18 @@
   background-color: #629d9a;
   color: white;
   border-radius: 12px;
-  width: auto; /* Automatska širina za karticu */
-  margin-bottom: 30px; /* Smanjen razmak između kartica */
+  width: auto;
+  margin-bottom: 30px;
 }
 
-/* Stil za centrirani naslov */
 .center-title {
   text-align: center;
   font-size: 24px;
-  font-weight: normal;  /* Uklonjen bold */
-  color: black;  /* Boja slova promenjena u crnu */
+  font-weight: normal;
+  color: black;
   margin-bottom: 10px;
 }
 
-/* Raspored kartica sa slikama (tekst levo, slika desno) */
 .card {
   display: flex;
   justify-content: space-between;
@@ -97,14 +94,13 @@
   width: 100%;
   max-width: 800px;
   margin-bottom: 5px;
-  min-height: 250px; /* Postavljanje minimalne visine kako bi sve kartice bile iste dužine */
+  min-height: 250px;
 }
 
 .card.reverse {
   flex-direction: row-reverse;
 }
 
-/* Slika u kartici */
 .image-item {
   display: flex;
   align-items: center;
@@ -112,44 +108,45 @@
 }
 
 .image-item.left {
-  order: 1; /* Prvi red u kartici */
+  order: 1;
 }
 
 .image-item.right {
-  order: 2; /* Drugi red u kartici */
+  order: 2;
 }
 
 .round-image {
-  width: 150px; /* Širina slike */
-  height: 150px; /* Visina slike */
-  border-radius: 50%; /* Pravi sliku okruglom */
-  object-fit: cover; /* Prilagodi sliku unutar kruga */
-  border: 2px solid #ccc; /* Opcionalno: okvir */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efekat senke */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Tekst u kartici */
 .text-item {
-  width: 70%; /* Povećana širina za tekst */
+  width: 70%;
   font-size: 16px;
   line-height: 1.6;
+  text-align: left;
 }
 
 .text-item p {
   margin-top: 10px;
-  font-size: 16px; /* Veličina fonta za tekst */
-  font-weight: normal; /* Uklonjen bold */
-  color: black; /* Boja slova promenjena u crnu */
+  font-size: 16px;
+  font-weight: normal;
+  color: black;
 }
 
 .card-container h1 {
   font-size: 2.5rem;
-  font-weight: normal; /* Uklonjen bold */
+  font-weight: normal;
   margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .card-container p {
   font-size: 1rem;
   line-height: 1.6;
-  color: black; /* Boja slova promenjena u crnu */
+  color: black;
 }

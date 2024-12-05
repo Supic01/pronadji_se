@@ -150,7 +150,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   };
 
   // Function to check if the current link is active
-  const isActive = (path) => location.pathname === path ? "active" : "";
+  const isActive = (path) => (location.pathname === path ? "active" : "");
 
   return (
     <>

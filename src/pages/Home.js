@@ -2,27 +2,20 @@ import React, { useEffect } from "react";
 import "../css/Home.css";
 
 const Home = () => {
-  // Funkcija koja dodaje klasu 'show' kada je kartica u vidnom delu ekrana
   const handleScroll = () => {
     const cards = document.querySelectorAll(".cardG");
     cards.forEach((card) => {
       const cardPosition = card.getBoundingClientRect();
-      // Dodajte klasu 'show' kada kartica uđe u vidni deo ekrana
       if (cardPosition.top < window.innerHeight && cardPosition.bottom >= 0) {
         if (!card.classList.contains("show")) {
           card.classList.add("show");
         }
-      } else {
-        // Opcionalno: možete ukloniti klasu 'show' kada kartica izađe iz vidnog dela ekrana
-        // card.classList.remove("show");
       }
     });
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    // Pozivanje funkcije odmah pri učitavanju da bi se kartice odmah prikazale ako su već u vidnom delu
     handleScroll();
 
     return () => {
