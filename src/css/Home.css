@@ -14,11 +14,11 @@
   left: 0; /* Poravnanje sa levom ivicom ekrana */
   padding: 20px;
   color: white; /* Boja teksta za kontrast */
-  background-color: rgba(0, 0, 0, 0.5); /* Tamna pozadina sa prozirnošću */
+  background-color: rgba(52, 112, 82, 0.5); /* Tamna pozadina sa prozirnošću */
   width: 40%; /* Povećavanje širine teksta */
   border-radius: 8px; /* Blago zaobljeni uglovi */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Senka za bolju čitljivost */
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 100px;
 }
 
@@ -31,4 +31,55 @@
 .left-text p {
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.cards-container {
+  display: flex; /* Aktivacija Flexbox-a */
+  justify-content: center; /* Poravnanje kartica na sredini */
+  gap: 20px; /* Razmak između kartica */
+  margin: 30px 0; /* Dodavanje razmaka između hero sekcije i kartica */
+}
+
+.cardG {
+  background-color: #629d9a; /* Boja pozadine kartica */
+  color: white; /* Bela boja teksta */
+  border-radius: 8px; /* Zaobljeni uglovi */
+  padding: 20px;
+  width: 300px; /* Fiksna širina kartica */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Senka */
+  opacity: 0; /* Kartice su inicijalno nevidljive */
+  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out; /* Dodavanje prelaza za transformaciju */
+}
+
+/* Animacija za fade-in */
+.cardG.show {
+  opacity: 1; /* Kartice postaju vidljive */
+}
+
+.cardG:hover {
+  transform: scale(1.03); /* Manje uvećanje, sa boljim prelazom */
+}
+
+.card-link {
+  display: inline-block; /* Blok za lakše stilizovanje */
+  margin-top: 15px; /* Razmak između teksta i linka */
+  padding: 10px 20px; /* Unutrašnji razmak za dugme izgled */
+  color: white; /* Bela boja teksta */
+  text-decoration: none; /* Uklanjanje podvlačenja */
+  font-weight: bold; /* Podebljan tekst */
+  background-color: rgba(0, 0, 0, 0.3); /* Prozirna crna pozadina */
+  border-radius: 8px; /* Zaobljeni uglovi */
+  transition: background-color 1.5s ease, transform 0.3s ease; /* Efekat promena na hover */
+}
+
+.card-link:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Tamnija nijansa na hover */
+  transform: translateY(-3px); /* Blagi podizanje dugmeta na hover */
+}
+
+.cardG h2 {
+  font-size: 1.5rem; /* Povećanje fonta za 2 u odnosu na originalnu vrednost (2.5rem -> 3.5rem) */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Senka teksta */
+  margin-bottom: 5px;
 }

@@ -134,7 +134,7 @@ const Test = () => {
 
   return (
     <div className="test-container">
-      <h1>Anketa: Proceni svoja interesovanja</h1>
+      <h1 className="title-container">Test profesionalne orijentacije</h1>
       {shuffledQuestions.map(({ question }, index) => (
         <div key={index} className="question-container">
           <p>{question}</p>

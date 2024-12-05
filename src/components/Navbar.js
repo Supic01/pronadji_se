@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import "../css/Navbar.css"; // CSS for the navbar
 import searchIcon from "../images/search.png";
 
-
 const Navbar = ({ isLoggedIn }) => {
   // State to control visibility of the navbar
   const [isVisible, setIsVisible] = useState(true);
@@ -20,6 +19,9 @@ const Navbar = ({ isLoggedIn }) => {
     }
   }, [location]); // Run effect when location changes
 
+  // Function to check if the current link is active
+  const isActive = (path) => location.pathname === path ? "active" : "";
+
   return (
     <>
       {isVisible && (
@@ -34,22 +36,22 @@ const Navbar = ({ isLoggedIn }) => {
           </div>
           <ul>
             <li>
-              <Link to="/">Naslovna</Link>
+              <Link to="/" className={isActive("/")}>Naslovna</Link>
             </li>
             <li>
-              <Link to="/about">O nama</Link>
+              <Link to="/about" className={isActive("/about")}>O nama</Link>
             </li>
             <li>
-              <Link to="/test">Test</Link>
+              <Link to="/test" className={isActive("/test")}>Test</Link>
             </li>
             <li>
-              <Link to="/contact">Kontakt</Link>
+              <Link to="/contact" className={isActive("/contact")}>Kontakt</Link>
             </li>
             <li>
-              <Link to="/profile">Profil Test</Link>
+              <Link to="/profile" className={isActive("/profile")}>Profil Test</Link>
             </li>
             <li>
-              <Link to="/result">Rezultat Test</Link>
+              <Link to="/result" className={isActive("/result")}>Rezultat Test</Link>
             </li>
           </ul>
           {isLoggedIn ? (

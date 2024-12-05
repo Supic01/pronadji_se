@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <section className='contact'>
       <form onSubmit={onSubmit}>
-        <h2>Contact form</h2>
+        <h2>Kontaktirajte nas</h2>
         <div className='input-box'>
           <label>Ime i prezime</label>
           <input

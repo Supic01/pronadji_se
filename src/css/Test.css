@@ -1,94 +1,107 @@
 /* Glavni kontejner */
 .test-container {
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff; /* Bela pozadina */
-  }
-  
-  /* Naslov ankete */
-  .test-container h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Kontejner za svako pitanje */
-  .question-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f8f8; /* Svetla boja pozadine za polja sa pitanjima */
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Tekst pitanja */
-  .question-container p {
-    margin: 0;
-    font-size: 16px;
-    color: #444;
-    flex: 1; /* Omogućava prostoru za pitanje da se rastegne */
-  }
-  
-  /* Grupa radio dugmadi */
-  .radio-group {
-    display: flex;
-    gap: 10px; /* Razmak između radio dugmadi */
-  }
-  
-  .radio-group label {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .radio-group input[type="radio"] {
-    margin-right: 5px;
-    accent-color: #629d9a; /* Ljubičasta boja */
-  }
-  
-  /* Dugme za slanje */
-  .submit-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #a020f0; /* Ljubičasta boja */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: #7a14b0;
-  }
-  
-  /* Rezultati */
-  .results {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f8f8f8;
-  }
-  
-  .results h2 {
-    margin-bottom: 10px;
-    color: #444;
-  }
-  
-  .results ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .results ul li {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-  
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff; /* Bela pozadina */
+}
+
+/* Naslov ankete */
+.test-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;  /* Boja slova postavljena na belo */
+  margin-bottom: 30px;
+}
+
+/* Kontejner za svako pitanje */
+.question-container {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  background-color: rgba(92, 152, 112, 0.5); /* Svetla boja pozadine za polja sa pitanjima */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title-container {
+  justify-content: center;
+  align-items: center;
+  background-color: #629d9a; /* Svetla boja pozadine za polja sa pitanjima */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  align-content: center;
+  width: 50vw;
+  margin-left: 245px;
+
+}
+
+/* Tekst pitanja */
+.question-container p {
+  margin: 0;
+  font-size: 16px;
+  color: #444; /* Bela boja slova */
+  flex: 1; /* Omogućava prostoru za pitanje da se rastegne */
+}
+
+/* Grupa radio dugmadi */
+.radio-group {
+  display: flex;
+  gap: 10px; /* Razmak između radio dugmadi */
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+  accent-color: #629d9a; /* Ljubičasta boja */
+}
+
+/* Dugme za slanje */
+.submit-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #a020f0; /* Ljubičasta boja */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #7a14b0;
+}
+
+/* Rezultati */
+.results {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+.results h2 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.results ul li {
+  margin: 5px 0;
+  font-size: 14px;
+}
