@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../css/Navbar.css"; // CSS for the navbar
+import "../css/Panel.css"; // Optional, for styling the panel
+import editIcon from "../images/edit.png";
 import searchIcon from "../images/search.png";
 import profileIcon from "../images/user-profile.png";
 
 const Navbar = ({ isLoggedIn }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [isPanelVisible, setIsPanelVisible] = useState(false); // State for controlling panel visibility
   const location = useLocation();
 
   useEffect(() => {
@@ -14,13 +17,17 @@ const Navbar = ({ isLoggedIn }) => {
       location.pathname === "/signin" ||
       location.pathname === "/register" ||
       location.pathname === "/profile" ||
-      location.pathname === "/result" // Add "/result" to hide navbar on the result page
+      location.pathname === "/result"
     ) {
       setIsVisible(false);
     } else {
       setIsVisible(true);
     }
   }, [location]);
+
+  const togglePanel = () => {
+    setIsPanelVisible(!isPanelVisible); // Toggle the panel visibility
+  };
 
   return (
     <>
@@ -48,9 +55,28 @@ const Navbar = ({ isLoggedIn }) => {
             </li>
           </ul>
           {isLoggedIn ? (
-            <Link to="/profile">
-              <img className="user_icon" src={profileIcon} alt="Profile Icon" />
-            </Link>
+            <div className="profile-icon-container">
+              <img
+                className="user_icon"
+                src={profileIcon}
+                alt="Profile Icon"
+                onClick={togglePanel} // Toggle the profile panel visibility
+              />
+              <div
+                className={`profile-panel ${isPanelVisible ? "visible" : ""}`}
+              >
+                <div className="profile-row">
+                  <h2>Lana Misic</h2>
+                  <img className="edit-icon" src={editIcon} alt="Edit" />
+                </div>
+                <div className="profile-row">
+                  <h3>misicl@gmail.com</h3>
+                </div>
+                <button className="btn-delete">
+                  <strong>Delete account</strong>
+                </button>
+              </div>
+            </div>
           ) : (
             <button className="logbtn">
               <Link
