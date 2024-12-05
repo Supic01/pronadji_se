@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #cbc6ce; /* Postavka boje pozadine za sve stranice */
 }
 
@@ -212,7 +212,7 @@ body {
 
 .fax-auth-form {
   background-color: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* light shadow to make the form stand out */
   width: 900px; /* set a width for the form */

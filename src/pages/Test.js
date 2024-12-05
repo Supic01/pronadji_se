@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Test.css";
 
-// Pitanja sa kategorijama
+// Categories with questions
 const categories = {
   matematika: [
     "Uživam u rešavanju zadataka koji zahtevaju logično razmišljanje.",
@@ -70,7 +70,7 @@ const categories = {
   ],
 };
 
-// Funkcija za mešanje pitanja
+// Function to shuffle questions
 const shuffleQuestions = (categories) => {
   const mixedQuestions = [];
   for (const [category, questions] of Object.entries(categories)) {
@@ -84,10 +84,10 @@ const shuffleQuestions = (categories) => {
 const Test = () => {
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [responses, setResponses] = useState({});
-  const [results, setResults] = useState(null); // Dodato stanje za rezultate
+  const [results, setResults] = useState(null);
+  const navigate = useNavigate(); // For programmatic navigation
 
   useEffect(() => {
-    // Mešanje pitanja prilikom inicijalnog učitavanja
     const mixed = shuffleQuestions(categories);
     setShuffledQuestions(mixed);
   }, []);
@@ -119,7 +119,6 @@ const Test = () => {
   };
 
   const handleSubmit = () => {
-    // Proveriti da li su sva pitanja odgovarana
     const unansweredQuestions = shuffledQuestions.filter(
       (_, index) => !responses[index]
     );
@@ -129,7 +128,8 @@ const Test = () => {
     }
 
     const conclusions = calculateConclusions();
-    setResults(conclusions); // Postavljanje rezultata u stanje
+    setResults(conclusions);
+    navigate("/result", { state: { results: conclusions } });
   };
 
   return (
@@ -154,21 +154,8 @@ const Test = () => {
         </div>
       ))}
       <button onClick={handleSubmit} className="submit-button">
-        Pošaljite odgovore
+        Pošalji odgovore
       </button>
-
-      {results && (
-        <div className="results">
-          <h2>Vaši rezultati:</h2>
-          <ul>
-            {Object.entries(results).map(([category, score]) => (
-              <li key={category}>
-                <strong>{category}:</strong> {score}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
