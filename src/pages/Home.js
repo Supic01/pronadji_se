@@ -43,7 +43,7 @@ const Home = () => {
             Kroz izborne predmete i praktična znanja, studenti stiču veštine za domaće i međunarodno pravo. 
             Više informacija na sajtu Pravnog fakulteta.
           </p>
-          <a href="#!" className="card-link">
+          <a href="https://pf.uns.ac.rs/sr/" className="card-link">
             Pročitaj više
           </a>
         </div>
@@ -64,7 +64,7 @@ const Home = () => {
             Simfonijski orkestar Akademije umetnosti održava koncert 08.12 u novosadskog Sinagogi, u 20 časova. 
             Program se sastoji od kompozicija „Slovenska igra“, „Per Gint“, „Karmen“ i „Krcko Oraščić“, sa dirigentom profesorom Andrej Bursaćem.
           </p>
-          <a href="#!" className="card-link">
+          <a href="https://akademija.uns.ac.rs/" className="card-link">
             Pročitaj više
           </a>
         </div>
